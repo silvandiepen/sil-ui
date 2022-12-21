@@ -1,0 +1,3 @@
+@import "../form.scss";
+
+@include formStyle("textarea", ("textarea-control", "preview", "label"));

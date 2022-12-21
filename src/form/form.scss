@@ -1,0 +1,209 @@
+@use "sass:map";
+
+$prefix: "input-field-" !default;
+
+@function v($name, $default) {
+  @return var(--#{$prefix}-#{$name}, $default);
+}
+
+@function contains($list, $value) {
+  $_out: false;
+  @each $item in $list {
+    @if $item == $value {
+      $_out: true;
+    }
+  }
+  @return $_out;
+}
+
+
+
+@function getBlock($name){
+  $block: map.get($components,$name);
+  @if $block{
+    @return $block;
+  } @else {
+    @warn "#{$name} does not exist in list";
+    @return "default";
+  }
+}
+
+
+@mixin formStyle($name: "input-field", $elements: ()) {
+
+  $block: getBlock($name);
+
+
+  $prefix: "#{$block}-";
+
+  .#{$block} {
+    font-family: inherit;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+
+    @if contains($elements, "text-control") or
+      contains($elements, "textarea-control") or
+      contains($elements, "select-control")
+    {
+      &__control {
+        padding: v("padding", 1em);
+        font-family: v("font-family", 0.75em 1em);
+        font-size: 1em;
+        border-radius: v("border-radius", var(--border-radius, 0.25em));
+        border: 2px
+          solid
+          v(
+            "border-color",
+            rgba(
+              var(--foreground-r),
+              var(--foreground-g),
+              var(--foreground-b),
+              0.25
+            )
+          );
+        color: v("text-color", var(--foreground, #fff));
+        background-color: v("background-color", var(--background, transparent));
+        &:focus {
+          outline: none;
+          border-color: rgba(
+            var(--primary-r),
+            var(--primary-g),
+            var(--primary-b),
+            0.5
+          );
+        }
+      }
+    }
+    @if contains($elements, "textarea-control") {
+      &__control {
+        resize: none;
+      }
+    }
+    @if contains($elements, "select-control") {
+      &__control {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgNzIgNzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDcyIDcyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBvbHlnb24gZmlsbD0iY3VycmVudENvbG9yIiBwb2ludHM9IjM2LDU0IDYuMiwyNC4yIDExLjgsMTguNSAzNiw0Mi43IDYwLjIsMTguNSA2NS44LDI0LjIgCSIvPgo8L2c+Cjwvc3ZnPgo=");
+        background-position: calc(100% - 1em) 50%;
+        background-size: 1em 1em;
+        background-repeat: no-repeat;
+      }
+    }
+    @if contains($elements, "check-control") {
+      &__control {
+        width: 0;
+        height: 0;
+        position: absolute;
+        border: 1px solid red;
+
+        &:focus {
+          & + #{$block}__label::before {
+            box-shadow: v(
+              "focus-shadow",
+              0 0 0 3px v("focus-color", var(--primary))
+            );
+          }
+        }
+        &:checked + .#{$block}__label::before {
+          content: "✓";
+          text-shadow: 1px 1px 5px black;
+          border-color: v("checked-background-color", var(--primary));
+          background-color: v("checked-background-color", var(--primary));
+        }
+      }
+    }
+    @if contains($elements, "check-label") {
+      &__label {
+        &::before {
+          text-align: center;
+          line-height: 1.5;
+          border-radius: v("border-radius", var(--border-radius, 0.25em));
+          border: 2px
+            solid
+            v(
+              "border-color",
+              rgba(
+                var(--foreground-r),
+                var(--foreground-g),
+                var(--foreground-b),
+                0.25
+              )
+            );
+          color: v("text-color", var(--foreground, #fff));
+          content: "";
+          width: 1.33em;
+          height: 1.33em;
+        }
+        display: flex;
+        gap: 1em;
+        align-items: center;
+        padding: v("label-padding", v("padding", 0.75em 0em));
+      }
+    }
+    @if contains($elements, "radio-control") {
+      &__control {
+        width: 0;
+        height: 0;
+        position: absolute;
+
+        &:focus {
+          & + #{$block}__label::before {
+            box-shadow: v(
+              "focus-shadow",
+              0 0 0 3px v("focus-color", var(--primary))
+            );
+          }
+        }
+        &:checked + .#{$block}__label::before {
+          border-color: v("checked-background-color", var(--primary));
+          background-color: v("checked-background-color", var(--primary));
+          background-image: url("https://image.flaticon.com/icons/svg/60/60993.svg");
+          background-size: contain;
+          // background-image: radial-gradient(closest-side, var(--background), var(--background), transparent);
+          // background-size: 1em 1em;
+          // background-repeat: no-repeat;
+          // background-position: center center;
+        }
+      }
+    }
+    @if contains($elements, "radio-label") {
+      &__label {
+        &::before {
+          border-radius: v("border-radius", 50%);
+          border: 2px
+            solid
+            v(
+              "border-color",
+              rgba(
+                var(--foreground-r),
+                var(--foreground-g),
+                var(--foreground-b),
+                0.25
+              )
+            );
+          color: v("text-color", var(--foreground, #fff));
+          content: "";
+          width: 1.5em;
+          height: 1.5em;
+        }
+        display: flex;
+        gap: 1em;
+        align-items: center;
+        padding: v("label-padding", v("padding", 0.75em 0em));
+      }
+    }
+
+    @if contains($elements, "label") {
+      &__label {
+        padding: v("label-padding", v("padding", 0.75em 0em));
+      }
+    }
+    @if contains($elements, "preview") {
+      &__preview {
+        padding: v("preview-opacity", 0.5);
+      }
+    }
+  }
+}

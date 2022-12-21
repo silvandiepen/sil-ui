@@ -1,0 +1,3 @@
+@import "../form.scss";
+
+@include formStyle('checkbox',('check-control','check-label'));

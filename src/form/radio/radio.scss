@@ -1,0 +1,3 @@
+@import "../form.scss";
+
+@include formStyle('radio',('radio-control','radio-label'));

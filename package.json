@@ -1,0 +1,36 @@
+{
+  "name": "@sil/ui",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./form": "./dist/form.js",
+    "./checkbox": "./dist/checkbox.js",
+    "./number": "./dist/number.js",
+    "./radio": "./dist/radio.js",
+    "./select": "./dist/select.js",
+    "./stack": "./dist/stack.js",
+    "./text": "./dist/text.js",
+    "./textarea": "./dist/textarea.js"
+  },
+  "types": "types/my-element.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "@sil/id": "^0.0.6",
+    "bemm": "^1.0.4",
+    "lit": "^2.4.1"
+  },
+  "devDependencies": {
+    "sass": "^1.57.1",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0"
+  }
+}

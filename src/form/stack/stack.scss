@@ -1,0 +1,13 @@
+@import "../form.scss";
+
+.form-stack {
+  gap: 1em;
+  padding: 1em;
+  display: flex;
+  &--horizontal {
+    flex-direction: row;
+  }
+  &--vertical {
+    flex-direction: column;
+  }
+}

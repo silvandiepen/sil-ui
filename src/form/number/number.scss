@@ -1,0 +1,3 @@
+@import "../form.scss";
+
+@include formStyle('number',('text-control','preview','label'));

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Lit + TS</title>
+    <link rel="stylesheet" href="./src/index.scss" />
+    <script type="module" src="/src/form/text"></script>
+    <script type="module" src="/src/form/number"></script>
+    <script type="module" src="/src/form/textarea"></script>
+    <script type="module" src="/src/form/select"></script>
+    <script type="module" src="/src/form/form"></script>
+    <script type="module" src="/src/form/checkbox"></script>
+    <script type="module" src="/src/form/radio"></script>
+    <script src="https://unpkg.com/petite-vue" defer init></script>
+
+    <style>
+sil-stack{
+  display: block;
+  width: 320px; margin: auto;
+}
+
+    </style>
+  </head>
+  <body>
+    <sil-stack>
+      <sil-text label="Text"></sil-text>
+      <sil-number label="Number"></sil-number>
+
+      <sil-select label="Select"></sil-select>
+      <script>
+        const select = document.querySelector("sil-select");
+        select.items = [
+          { name: "test", value: "something" },
+          { name: "test2", value: "something" },
+        ];
+      </script>
+      <sil-textarea label="Text Area"></sil-textarea>
+      <sil-checkbox label="Checkbox"></sil-checkbox>
+      <sil-radio label="Radio 1" name="my-field"></sil-radio>
+      <sil-radio label="Radio 3" name="my-field"></sil-radio>
+      <sil-radio label="Radio 2" name="my-field"></sil-radio>
+    </sil-stack>
+
+    <!-- <div
+      v-scope="{ testString: 'something', testNumber: 0, testOption:'hoi',testOptions: [{ name: 'kut', value:' nog kutter'},{ name: 'hoiii', value:'hoi'}] }"
+    >
+      <form-stack>
+        <text-field label="Text" v-model="testString"></text-field>
+        <number-field label="Number" v-model="testNumber"></number-field>
+        <select-field
+          label="Select"
+          v-model="testOption"
+          :items="testOptions"
+        ></select-field>
+        <textarea-field label="Text Area" v-model="testString"></textarea-field>
+      </form-stack>
+
+      results:<br />
+      {{testString}}<br />
+      {{testNumber}}<br />
+      {{testOption}}<br />
+      {{testOptions}}<br />
+    </div> -->
+  </body>
+</html>

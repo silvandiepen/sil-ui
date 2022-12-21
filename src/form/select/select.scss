@@ -1,0 +1,3 @@
+@import "../form.scss";
+
+@include formStyle('select',('select-control','preview','label'));
