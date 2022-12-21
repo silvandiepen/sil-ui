@@ -1,18 +1,17 @@
 import { LitElement } from "lit";
-export declare class TextArea extends LitElement {
+export declare class Switch extends LitElement {
     static styles: import("lit").CSSResult;
     label: string;
-    value: string;
+    labelOff: string;
+    labelOn: string;
+    value: boolean;
     required: boolean;
-    placeholder: string;
-    preview: boolean;
-    resize: boolean;
-    autoSize(e: any): void;
+    id: string;
     handleChange(e: any): void;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        "sil-textarea": TextArea;
+        [key: string]: Switch;
     }
 }

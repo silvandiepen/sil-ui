@@ -1,0 +1,16 @@
+@import "./style/function.scss";
+
+$icons: (
+  "chevron-down":
+    url("data:image/svg+xml,%3Csvg version='1.1'  xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' [COLOR] viewBox='0 0 72 72' style='enable-background:new 0 0 72 72;' xml:space='preserve'%3E%3Cg%3E%3Cpolygon points='36,54 6.2,24.2 11.8,18.5 36,42.7 60.2,18.5 65.8,24.2 '/%3E%3C/g%3E%3C/svg%3E%0A"),
+  "chevron-up":
+    url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' [COLOR] viewBox='0 0 72 72' style='enable-background:new 0 0 72 72;' xml:space='preserve'%3E%3Cg%3E%3Cpolygon points='36,18.5 65.8,48.3 60.2,54 36,29.8 11.8,54 6.2,48.3 '/%3E%3C/g%3E%3C/svg%3E%0A"),
+);
+
+@function getIcon($name, $color: red) {
+  $icon: map.get($icons, $name);
+
+  $icon: str-replace($icon, "[COLOR]", "fill='${color}'");
+
+  @return $icon;
+}

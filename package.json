@@ -21,7 +21,8 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "vscode:prepublish": "npm run build"
   },
   "dependencies": {
     "@sil/id": "^0.0.6",

@@ -1,18 +1,22 @@
 import { LitElement } from "lit";
-export declare class NumberField extends LitElement {
+export declare class Number extends LitElement {
     static styles: import("lit").CSSResult;
     label: string;
     value: string;
     placeholder: string;
     required: boolean;
-    min: number;
-    max: number;
+    min: null;
+    max: null;
     preview: boolean;
+    increment: number;
+    minMax(value: number): number;
     handleChange(e: any): void;
+    increase(): void;
+    decrease(): void;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        "number-field": NumberField;
+        [key: string]: Number;
     }
 }

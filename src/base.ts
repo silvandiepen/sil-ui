@@ -9,6 +9,7 @@ export const components = {
   checkbox: `${base.prefix}-checkbox`,
   number: `${base.prefix}-number`,
   select: `${base.prefix}-select`,
+  switch: `${base.prefix}-switch`,
 } as const;
 
 export const getComponent = (component: keyof typeof components) => {

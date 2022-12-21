@@ -1,3 +1,4 @@
 @import "../form.scss";
 
-@include formStyle('number',('text-control','preview','label'));
+@include formStyle('number',('number-control','preview','label'));
+

@@ -5,9 +5,8 @@ import { useBemm } from "bemm";
 import { getComponent } from "../../base";
 import styles from "./textarea.scss?inline";
 
-@customElement(getComponent('textarea'))
+@customElement(getComponent("textarea"))
 export class TextArea extends LitElement {
-
   static styles = unsafeCSS(styles);
 
   @property({ type: String })
@@ -25,21 +24,34 @@ export class TextArea extends LitElement {
   @property({ type: Boolean })
   preview = false;
 
+  @property({ type: Boolean })
+  resize = true;
+
+  autoSize(e: any) {
+    e.target.style.height = 0;
+    e.target.style.height = e.target.scrollHeight + "px";
+  }
+
   handleChange(e: any) {
     this.value = e.target.value;
+    if (this.resize) this.autoSize(e);
   }
 
   render() {
-    const bemm = useBemm(getComponent('textarea'));
+    const bemm = useBemm(getComponent("textarea"));
     return html`
       <div class="${bemm()}">
-        ${this.preview ? `<div class="${bemm("preview")}">${this.value}</div>` : null}
-        <textarea
-          class="${bemm("control")}"
-          placeholder="${this.placeholder}"
-          value="${this.value}"
-          @input="${this.handleChange}"
-        ></textarea>
+        ${this.preview
+          ? `<div class="${bemm("preview")}">${this.value}</div>`
+          : null}
+        <div class="${bemm("input")}">
+          <textarea
+            class="${bemm("control")}"
+            placeholder="${this.placeholder}"
+            value="${this.value}"
+            @input="${this.handleChange}"
+          ></textarea>
+        </div>
         <label class="${bemm("label")}">${this.label}</label>
       </div>
     `;

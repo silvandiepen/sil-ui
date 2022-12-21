@@ -1,0 +1,47 @@
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+
+  @return $string;
+}
+
+@function v($name, $default) {
+  @return var(--#{$prefix}-#{$name}, $default);
+}
+
+@function color($name, $opacity: 1) {
+  @return rgba(
+    var(--#{$name}-r),
+    var(--#{$name}-g),
+    var(--#{$name}-b),
+    $opacity
+  );
+}
+
+@function contains($list, $value) {
+  $_out: false;
+  @each $item in $list {
+    @if $item == $value {
+      $_out: true;
+    }
+  }
+  @return $_out;
+}
+
+@function getBlock($name) {
+  $block: map.get($components, $name);
+  @if $block {
+    @return $block;
+  } @else {
+    @warn "#{$name} does not exist in list";
+    @return "default";
+  }
+}

@@ -5,13 +5,13 @@ import { useBemm } from "bemm";
 import { getComponent } from "../../base";
 import styles from "./text.scss?inline";
 
-@customElement(getComponent('text'))
+@customElement(getComponent("text"))
 export class Text extends LitElement {
   static styles = unsafeCSS(styles);
-  
+
   @property({ type: String })
   label = "";
-  
+
   @property({ type: String })
   value = "";
 
@@ -29,19 +29,21 @@ export class Text extends LitElement {
   }
 
   render() {
-    const bemm = useBemm(getComponent('text'));
+    const bemm = useBemm(getComponent("text"));
     return html`
       <div class="${bemm()}">
         ${this.preview
           ? `<div class="${bemm("preview")}">${this.value}</div>`
           : null}
-        <input
-          type="text"
-          class="${bemm("control")}"
-          placeholder="${this.placeholder}"
-          value="${this.value}"
-          @input="${this.handleChange}"
-        />
+        <div class="${bemm("input")}">
+          <input
+            type="text"
+            class="${bemm("control")}"
+            placeholder="${this.placeholder}"
+            value="${this.value}"
+            @input="${this.handleChange}"
+          />
+        </div>
         <label class="${bemm("label")}">${this.label}</label>
       </div>
     `;
