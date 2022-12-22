@@ -31,6 +31,7 @@ export class MenuToggle extends LitElement {
       <button
         class="${classes({}, this.active ? { m: "active" } : null)}"
         @click="${this.toggle}"
+        aria-label="Toggle menu"
       >
         <span class="${bemm("bar")}"></span>
         <span class="${bemm("bar")}"></span>
