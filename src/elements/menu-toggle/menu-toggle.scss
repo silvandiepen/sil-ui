@@ -1,0 +1,41 @@
+.sil-menu-toggle {
+  width: 3em;
+  height: 3em;
+  background: transparent;
+  position: relative;
+  border: none;
+
+  &__bar {
+    height: 2px;
+    width: 1.5em;
+    background-color: var(--foreground);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform .3s;
+
+    &:nth-child(1) {
+      transform: translate(-50%, calc(-50% - 6px));
+    }
+    &:nth-child(2) {
+      transform: translate(-50%, calc(-50%)) scale(1, 1);
+    }
+    &:nth-child(3) {
+      transform: translate(-50%, calc(-50% + 6px));
+    }
+  }
+  &--active {
+    .sil-menu-toggle__bar {
+      &:nth-child(1) {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &:nth-child(2) {
+        transform: translate(-50%, -50%) scale(0, 1);
+      }
+      &:nth-child(3) {
+        transform: translate(-50%,-50%) rotate(-45deg);
+      }
+    }
+  }
+}

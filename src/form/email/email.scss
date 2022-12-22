@@ -1,0 +1,3 @@
+@import "../form.scss";
+
+@include formStyle('email',('text-control','preview','label'));

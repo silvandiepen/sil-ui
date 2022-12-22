@@ -5,6 +5,8 @@ $colors: (
   light: #fff,
   primary: #f89afd,
   secondary: #2bcd92,
+  error: #e3471c,
+  warning: #fac413,
 );
 
 @mixin getColorVariables($name,$value){

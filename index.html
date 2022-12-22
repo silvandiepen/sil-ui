@@ -14,20 +14,23 @@
     <script type="module" src="/src/form/checkbox"></script>
     <script type="module" src="/src/form/switch"></script>
     <script type="module" src="/src/form/radio"></script>
+    <script type="module" src="/src/elements/menu-toggle"></script>
     <script src="https://unpkg.com/petite-vue" defer init></script>
 
     <style>
-sil-stack{
-  display: block;
-  width: 320px; margin: auto;
-}
-
+      sil-stack {
+        display: block;
+        width: 320px;
+        margin: auto;
+      }
     </style>
   </head>
   <body>
+    <sil-menu-toggle></sil-menu-toggle>
+
     <sil-stack>
-      <sil-text label="Text"></sil-text>
-      <sil-number label="Number"></sil-number>
+      <sil-text id="text-input" required label="Text"></sil-text>
+      <sil-number required label="Number"></sil-number>
 
       <sil-select label="Select"></sil-select>
       <script>
@@ -37,8 +40,8 @@ sil-stack{
           { name: "test2", value: "something" },
         ];
       </script>
-      <sil-textarea label="Text Area"></sil-textarea>
-      <sil-checkbox label="Checkbox"></sil-checkbox>
+      <sil-textarea required label="Text Area"></sil-textarea>
+      <sil-checkbox required label="Checkbox"></sil-checkbox>
       <sil-switch labelOff="Switch Off" labelOn="Switch On"></sil-switch>
       <sil-radio label="Radio 1" name="my-field"></sil-radio>
       <sil-radio label="Radio 3" name="my-field"></sil-radio>

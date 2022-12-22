@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import { components } from "./src/base";
 
-
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
@@ -16,13 +15,17 @@ export default defineConfig({
         "src/form/radio/radio",
         "src/form/checkbox/checkbox",
         "src/form/stack/stack",
+        "src/elements/blockquote/blockquote",
+        "src/elements/card/card",
+        "src/elements/button/button",
+        "src/elements/menu-toggle/menu-toggle",
       ],
       formats: ["es"],
     },
-    minify: false,
-    rollupOptions: {
-      external: /^lit/,
-    },
+    minify: true,
+    // rollupOptions: {
+    //   external: /^lit/,
+    // },
   },
   css: {
     preprocessorOptions: {

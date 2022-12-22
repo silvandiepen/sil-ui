@@ -1,12 +1,15 @@
 import { LitElement, unsafeCSS, html } from "lit";
-import { customElement, property } from "lit/decorators.js";
+import { customElement, property, state } from "lit/decorators.js";
 import { useBemm } from "bemm";
 import styles from "./number.scss?inline";
-import { getComponent } from "../../base";
+import { getComponent, DefaultErrors } from "../../base";
 
 @customElement(getComponent("number"))
 export class Number extends LitElement {
   static styles = unsafeCSS(styles);
+
+  @state()
+  protected _touched = false;
 
   @property({ type: String })
   label = "";
@@ -19,6 +22,9 @@ export class Number extends LitElement {
 
   @property({ type: Boolean })
   required = false;
+
+  @property({ type: String })
+  requiredError = DefaultErrors.required
 
   @property({ type: Number || null })
   min = null;
@@ -40,6 +46,11 @@ export class Number extends LitElement {
 
   handleChange(e: any) {
     this.value = e.target.value;
+    this._touched = true;
+  }
+
+  hasError() {
+    return this.required && this._touched && this.value == "";
   }
 
   increase() {
@@ -52,9 +63,21 @@ export class Number extends LitElement {
   }
 
   render() {
-    const { bemm, classes } = useBemm(getComponent("number"));
+    const { bemm, classes } = useBemm(getComponent("number"), {
+      return: "string",
+    });
     return html`
-      <div class="${classes({})}">
+      <div
+        class="${classes(
+          {},
+          !this._touched && { m: "is-pristine" },
+          this._touched && { m: "is-touched" },
+          this.hasError() && { m: "has-error" }
+        )}"
+      >
+        ${this.hasError()
+          ? html`<div class="${bemm("error")}">${this.requiredError}</div>`
+          : null}
         ${this.preview
           ? `<div class="${bemm("preview")}">${this.value}</div>`
           : null}
@@ -69,7 +92,9 @@ export class Number extends LitElement {
             ${this.min !== null ? 'min="' + this.min + '"' : null}
             ${this.max !== null ? 'max="' + this.max + '"' : null}
             value="${this.value}"
+            required="${this.required}"
             @input="${this.handleChange}"
+            @blur="${this.handleChange}"
           />
         </div>
         <label class="${bemm("label")}">${this.label}</label>
