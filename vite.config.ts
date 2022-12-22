@@ -14,6 +14,7 @@ export default defineConfig({
         "src/form/select/select",
         "src/form/radio/radio",
         "src/form/checkbox/checkbox",
+        "src/form/switch/switch",
         "src/form/stack/stack",
         "src/elements/blockquote/blockquote",
         "src/elements/card/card",
