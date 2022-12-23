@@ -16,10 +16,14 @@ export const components = {
   button: `${base.prefix}-button`,
   menuToggle: `${base.prefix}-menu-toggle`,
   icon: `${base.prefix}-icon`,
+  list: `${base.prefix}-list`,
 } as const;
 
 export const getComponent = (component: keyof typeof components) => {
   return components[component];
+};
+export const getComponentName = (component: string) => {
+  return `${base.prefix}-${component}`;
 };
 
 export const DefaultErrors = {

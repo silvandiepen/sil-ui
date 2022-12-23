@@ -1,16 +1,17 @@
-import { LitElement, html } from "lit";
+import { LitElement, unsafeCSS, html } from "lit";
 import { customElement } from "lit/decorators.js";
+import { getComponentName } from "../../base";
 
+import styles from "../../elements/icon/icon.scss?inline";
+const styleData = styles;
 
-
-
-@customElement("sil-icon-vsf")
+@customElement(getComponentName("icon-vsf"))
 export class IconVsf extends LitElement {
-  
+  static styles = unsafeCSS(styleData);
 
   render() {
     return html`
-     <svg version="1.1" id="IconVsf" x="0px" y="0px"
+     <svg class="sil-icon" version="1.1" id="IconVsf" x="0px" y="0px"
 	 viewBox="0 0 240 240" style="enable-background:new 0 0 240 240;" xml:space="preserve">
 		
 

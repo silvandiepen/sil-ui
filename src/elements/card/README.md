@@ -4,8 +4,6 @@ icon: ❑
 
 # Card
 
-<script type="module" src="/assets/dist/card.js"></script>
-
 A styled card
 
 ## Example

@@ -42,8 +42,13 @@ export class TextArea extends LitElement {
     this.value = e.target.value;
     if (this.resize) this.autoSize(e);
     this._touched = true;
+    this.typeWriter()
   }
 
+  typeWriter() {
+    var audio = new Audio("/type.wav");
+    audio.play();
+  }
   hasError() {
     return this.required && this._touched && this.value == "";
   }

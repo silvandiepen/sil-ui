@@ -2,9 +2,13 @@ import { LitElement, unsafeCSS, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 import { getComponent } from "../../base";
+import { iconList } from "../../icons/list";
+
 import styles from "./icon.scss?inline";
 
-@customElement(getComponent("icon"))
+const componentName = getComponent("icon");
+
+@customElement(componentName)
 export class Icon extends LitElement {
   static styles = unsafeCSS(styles);
 
@@ -12,13 +16,23 @@ export class Icon extends LitElement {
   icon = "?";
 
   render() {
-    import(`./icon-${this.icon}.js`);
-    return html`<sil-icon-${this.icon}>${this.icon}</sil-icon-${this.icon}>`;
+    const defaultIcon = html`<sil-icon-help></sil-icon-help>`;
+
+    if (this.icon == "?") {
+      console.warn("icon: Not icon defined");
+      return defaultIcon;
+    }
+    if (!iconList.includes(`icon-${this.icon}`)) {
+      console.warn(`icon: ${this.icon} does not exist`);
+      return defaultIcon;
+    }
+
+    return html`<sil-${this.icon}></sil-${this.icon}>`;
   }
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    "sil-icon": Icon;
+    'sil-icon': Icon;
   }
 }

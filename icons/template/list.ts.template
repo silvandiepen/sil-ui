@@ -1,7 +1,9 @@
 export const iconList = [<% files.forEach(function(file,index) { %>
     "<%- file.name %>"<% if(index < files.length -1){ %>,<% } -%>
 <% }); %>
-] as const;
+];
+
+export const iconListType = [...iconList] as const;
 
 export enum Icons {<% files.forEach(function(file,index) { %>
     <%- upperSnakeCase(file.name) %> = "<%- file.name %>"<% if(index < files.length -1){ %>,<% } -%>

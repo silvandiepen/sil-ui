@@ -1,5 +1,5 @@
 ---
-icon: S
+icon: ≣
 ---
 
 # Stack

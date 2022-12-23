@@ -11,6 +11,7 @@ export declare class TextArea extends LitElement {
     resize: boolean;
     autoSize(e: any): void;
     handleChange(e: any): void;
+    typeWriter(): void;
     hasError(): boolean;
     render(): import("lit-html").TemplateResult<1>;
 }

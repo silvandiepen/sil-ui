@@ -6,6 +6,6 @@ export declare class Icon extends LitElement {
 }
 declare global {
     interface HTMLElementTagNameMap {
-        "sil-icon": Icon;
+        'sil-icon': Icon;
     }
 }

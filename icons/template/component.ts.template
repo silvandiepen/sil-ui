@@ -1,16 +1,17 @@
-import { LitElement, <% if (style.data) { %>unsafeCSS, <% } %>html } from "lit";
+import { LitElement, unsafeCSS, html } from "lit";
 import { customElement } from "lit/decorators.js";
+import { getComponentName } from "../../base";
 
-<% if (style.data) { %>const styleData = `<%- style.data %>`;<% } %>
+import styles from "../../elements/icon/icon.scss?inline";
+<% if (style.data) { %>const styleData = `<%- style.data %>`+styles;<% } %><% if (!style.data) { %>const styleData = styles;<% } %>
 
-
-@customElement("sil-<%- title_lowercase.replace('.svg','') %>")
+@customElement(getComponentName("<%- title_lowercase.replace('.svg','') %>"))
 export class <%- componentName %> extends LitElement {
-  <% if (style.data) { %>static styles = unsafeCSS(styleData);<% } %>
+  static styles = unsafeCSS(styleData);
 
   render() {
     return html`
-     <svg version="1.1" id="<%= componentName %>" x="0px" y="0px"
+     <svg class="sil-icon" version="1.1" id="<%= componentName %>" x="0px" y="0px"
 	 viewBox="0 0 <%- width %> <%- height %>" style="enable-background:new 0 0 <%- width %> <%- height %>;" xml:space="preserve">
 		<%- fixJsx(data_clean.both) %>
 	</svg>

@@ -61,7 +61,9 @@ export const iconList = [
     "icon-vsf",
     "icon-warning",
     "icon-warning2"
-] as const;
+];
+
+export const iconListType = [...iconList] as const;
 
 export enum Icons {
     ICON_ARROW_DOWN = "icon-arrow-down",

@@ -44,8 +44,10 @@ $prefix: "input-field-" !default;
           );
         position: relative;
         // border: 2px solid v("border-color", color(foreground, 0.25));
-        border: v("border-width", 2px) solid v("border-color", var(--foreground, currentColor));
-        
+        border: v("border-width", 2px)
+          solid
+          v("border-color", var(--foreground, currentColor));
+
         &:has(:focus) {
           outline: none;
           border-color: var(--primary, lightblue);
@@ -172,7 +174,7 @@ $prefix: "input-field-" !default;
           text-align: center;
           line-height: 1.33;
           border-radius: v("border-radius", var(--border-radius, 0.25em));
-          border: 2px solid v("border-color", color(foreground, 0.25));
+          border: 2px solid v("border-color", var(--foreground));
           color: v("text-color", var(--foreground, #fff));
           content: "";
           width: 1.33em;
@@ -227,8 +229,8 @@ $prefix: "input-field-" !default;
           border-radius: v("border-radius", 1em);
           border: var(--switch-border-weight)
             solid
-            v("border-color", color(foreground, 0.25));
-          color: v("text-color", var(--foreground, #fff));
+            v("border-color", var(--foreground, currentColor));
+          color: v("text-color", var(--foreground, currentColor));
           content: "";
           width: 100%;
           height: 100%;
@@ -247,6 +249,7 @@ $prefix: "input-field-" !default;
           left: 0%;
           transform: translate(var(--switch-border-weight), -50%);
           border-radius: 50%;
+          transition: transform .2s ease-in-out;
         }
       }
       &__label {
@@ -274,17 +277,20 @@ $prefix: "input-field-" !default;
         }
         &:checked + .#{$block}__label::before {
           color: v("checked-text-color", var(--background));
-          border-color: v("checked-background-color", var(--foreground));
+          border-color: v("checked-background-color", var(--foreground, currentColor));
           background: radial-gradient(
             ellipse at center,
-            v("checked-text-color", var(--background)) 0%,
-            v("checked-text-color", var(--background)) 75%,
+           currentColor 0%,
+            currentColor 75%,
             transparent 75%
           );
           background-size: 0.75em 0.75em;
           background-position: center center;
           background-repeat: no-repeat;
-          background-color: v("checked-background-color", var(--foreground));
+          background-color: v(
+            "checked-background-color",
+            var(--foreground, currentColor)
+          );
         }
       }
     }
@@ -292,8 +298,8 @@ $prefix: "input-field-" !default;
       &__label {
         &::before {
           border-radius: v("border-radius", 50%);
-          border: 2px solid v("border-color", color(foreground, 0.25));
-          color: v("text-color", var(--foreground, #fff));
+          border: 2px solid v("border-color", var(--foreground, currentColor));
+          color: v("text-color", var(--foreground, currentColor));
           content: "";
           width: 1.33em;
           height: 1.33em;
@@ -325,10 +331,13 @@ $prefix: "input-field-" !default;
       &__error {
         // margin-top: .5em;
         background-color: var(--error);
-        border-radius: 0 0 var(--border-radius, 0.5em) var(--border-radius, 0.5em);
+        border-radius: 0
+          0
+          var(--border-radius, 0.5em)
+          var(--border-radius, 0.5em);
         color: var(--error-text);
         padding: 0.5em 1em;
-        font-size: .85em;
+        font-size: 0.85em;
         display: block;
       }
     }

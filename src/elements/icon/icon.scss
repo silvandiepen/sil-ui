@@ -1,6 +1,10 @@
-.sil-button {
-    display: block;
-    border: 1px solid red;
-    padding: var(--space);
+.sil-icon {
+  width: var(--icon-size-width, 1em);
+  height: var(--icon-size-height, 1em);
+  font-size: var(--icon-size, 1em);
+  path,
+  rect,
+  circle {
+    fill: var(--icon-color, currentColor);
   }
-  
+}

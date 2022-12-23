@@ -1,4 +1,5 @@
-export declare const iconList: readonly ["icon-arrow-down", "icon-arrow-left", "icon-arrow-right", "icon-arrow-up", "icon-backspace", "icon-bigger", "icon-book", "icon-box", "icon-check", "icon-chevron-down", "icon-chevron-left", "icon-chevron-right", "icon-chevron-up", "icon-cloud", "icon-comment", "icon-copy", "icon-cross", "icon-desktop", "icon-document", "icon-documents", "icon-edit", "icon-expand", "icon-export", "icon-floppy", "icon-github", "icon-graph", "icon-health", "icon-heart", "icon-help", "icon-home", "icon-icon", "icon-image", "icon-implode", "icon-import", "icon-info", "icon-integrations", "icon-invisible", "icon-lab", "icon-label", "icon-laptop", "icon-link", "icon-lock", "icon-locked", "icon-mobile", "icon-moon", "icon-more", "icon-printer", "icon-profile", "icon-reports", "icon-search", "icon-send", "icon-settings", "icon-share", "icon-slack", "icon-smaller", "icon-sun", "icon-team", "icon-time", "icon-visible", "icon-vsf", "icon-warning", "icon-warning2"];
+export declare const iconList: string[];
+export declare const iconListType: readonly string[];
 export declare enum Icons {
     ICON_ARROW_DOWN = "icon-arrow-down",
     ICON_ARROW_LEFT = "icon-arrow-left",
