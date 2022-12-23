@@ -1,9 +1,9 @@
 import { LitElement } from "lit";
-export declare class IconIconBackspace extends LitElement {
+export declare class IconBackspace extends LitElement {
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        "sil-icon-icon-backspace": IconIconBackspace;
+        "sil-icon-backspace": IconBackspace;
     }
 }

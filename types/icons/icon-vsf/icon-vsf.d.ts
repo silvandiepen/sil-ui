@@ -1,9 +1,9 @@
 import { LitElement } from "lit";
-export declare class IconIconVsf extends LitElement {
+export declare class IconVsf extends LitElement {
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        "sil-icon-icon-vsf": IconIconVsf;
+        "sil-icon-vsf": IconVsf;
     }
 }

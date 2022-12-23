@@ -6,7 +6,7 @@ import { getComponent } from "../../base";
 
 
 @customElement(getComponent("icon"))
-export class IconIconBox extends LitElement {
+export class IconBox extends LitElement {
   
 
   render() {
@@ -21,6 +21,6 @@ export class IconIconBox extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "sil-icon-icon-box": IconIconBox;
+    "sil-icon-box": IconBox;
   }
 }

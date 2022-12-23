@@ -6,7 +6,7 @@ import { getComponent } from "../../base";
 
 
 @customElement(getComponent("icon"))
-export class IconIconBackspace extends LitElement {
+export class IconBackspace extends LitElement {
   
 
   render() {
@@ -21,6 +21,6 @@ export class IconIconBackspace extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "sil-icon-icon-backspace": IconIconBackspace;
+    "sil-icon-backspace": IconBackspace;
   }
 }

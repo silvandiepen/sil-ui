@@ -1,9 +1,9 @@
 import { LitElement } from "lit";
-export declare class IconIconPrinter extends LitElement {
+export declare class IconPrinter extends LitElement {
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        "sil-icon-icon-printer": IconIconPrinter;
+        "sil-icon-printer": IconPrinter;
     }
 }

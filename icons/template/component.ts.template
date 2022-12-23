@@ -6,7 +6,7 @@ import { getComponent } from "../../base";
 
 
 @customElement(getComponent("icon"))
-export class Icon<%- componentName %> extends LitElement {
+export class <%- componentName %> extends LitElement {
   <% if (style.data) { %>static styles = unsafeCSS(styleData);<% } %>
 
   render() {
@@ -21,6 +21,6 @@ export class Icon<%- componentName %> extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "sil-icon-<%- title_lowercase.replace('.svg','') %>": Icon<%- componentName %>;
+    "sil-<%- title_lowercase.replace('.svg','') %>": <%- componentName %>;
   }
 }

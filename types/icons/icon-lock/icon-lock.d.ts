@@ -1,9 +1,9 @@
 import { LitElement } from "lit";
-export declare class IconIconLock extends LitElement {
+export declare class IconLock extends LitElement {
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        "sil-icon-icon-lock": IconIconLock;
+        "sil-icon-lock": IconLock;
     }
 }

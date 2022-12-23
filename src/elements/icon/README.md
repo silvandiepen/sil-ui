@@ -10,6 +10,10 @@ A styled card
 
 <sil-icon icon="arrow-up"></sil-icon>
 
+---
+
+<sil-icon-arrow-down></sil-icon-arrow-down>
+
 ```html
 <sil-icon icon="arrow-up"></sil-icon>
 ```

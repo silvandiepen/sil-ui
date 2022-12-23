@@ -6,7 +6,7 @@ const styleData = `.b{fill:#f8bcd6;}.c{fill:#fbd8e7;}.d{fill:#ffdb77;}.e{fill:#f
 
 
 @customElement(getComponent("icon"))
-export class IconIconIcon extends LitElement {
+export class IconIcon extends LitElement {
   static styles = unsafeCSS(styleData);
 
   render() {
@@ -21,6 +21,6 @@ export class IconIconIcon extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "sil-icon-icon-icon": IconIconIcon;
+    "sil-icon-icon": IconIcon;
   }
 }
