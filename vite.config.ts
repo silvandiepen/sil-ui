@@ -23,6 +23,7 @@ export default defineConfig({
         "src/elements/card/card",
         "src/elements/button/button",
         "src/elements/menu-toggle/menu-toggle",
+        "src/elements/icon/icon",
         ...iconPaths,
       ],
       formats: ["es"],

@@ -2,7 +2,7 @@
 icon: i
 ---
 
-# Button
+# Icon
 
 A styled card
 
