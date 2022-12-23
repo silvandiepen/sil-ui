@@ -8,14 +8,14 @@ A styled card
 
 ## Example
 
-<sil-icon icon="arrow-up"></sil-icon>
+<!-- <sil-icon icon="arrow-up"></sil-icon> -->
 
 ---
 
 <sil-icon-arrow-down></sil-icon-arrow-down>
 
 ```html
-<sil-icon icon="arrow-up"></sil-icon>
+<!-- <sil-icon icon="arrow-up"></sil-icon> -->
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ Install
 Use
 
 ```html
-<sil-icon icon="arrow-up"></sil-icon>
+<!-- <sil-icon icon="arrow-up"></sil-icon> -->
 ```
 
 ## Props

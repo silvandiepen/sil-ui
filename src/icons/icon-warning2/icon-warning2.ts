@@ -1,11 +1,10 @@
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
-import { getComponent } from "../../base";
 
 
 
 
-@customElement(getComponent("icon"))
+@customElement("sil-icon-warning2")
 export class IconWarning2 extends LitElement {
   
 

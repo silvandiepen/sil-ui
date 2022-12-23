@@ -1,11 +1,10 @@
 import { LitElement, unsafeCSS, html } from "lit";
 import { customElement } from "lit/decorators.js";
-import { getComponent } from "../../base";
 
 const styleData = `.b{fill:#f8bcd6;}.c{fill:#fbd8e7;}.d{fill:#ffdb77;}.e{fill:#ffe8af;}.f{fill:#f390bb;}.g{fill:#a0ce5b;}.h{fill:#332b27;}.i{fill:#cce29d;}.j{fill:#61534d;}`;
 
 
-@customElement(getComponent("icon"))
+@customElement("sil-icon-icon")
 export class IconIcon extends LitElement {
   static styles = unsafeCSS(styleData);
 

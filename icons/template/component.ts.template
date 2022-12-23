@@ -1,11 +1,10 @@
 import { LitElement, <% if (style.data) { %>unsafeCSS, <% } %>html } from "lit";
 import { customElement } from "lit/decorators.js";
-import { getComponent } from "../../base";
 
 <% if (style.data) { %>const styleData = `<%- style.data %>`;<% } %>
 
 
-@customElement(getComponent("icon"))
+@customElement("sil-<%- title_lowercase.replace('.svg','') %>")
 export class <%- componentName %> extends LitElement {
   <% if (style.data) { %>static styles = unsafeCSS(styleData);<% } %>
 
