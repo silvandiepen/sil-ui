@@ -1,6 +1,5 @@
 import { LitElement, unsafeCSS, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { useBemm } from "bemm";
 
 import { getComponent } from "../../base";
 import styles from "./icon.scss?inline";
@@ -13,16 +12,8 @@ export class Icon extends LitElement {
   icon = "?";
 
   render() {
-    const { classes, bemm } = useBemm(getComponent("icon"), {
-      return: "string",
-    });
-    return html`
-      <icon class="${classes({})}">
-        <span class="${bemm("text")}">
-          <slot></slot>
-        </span>
-      </icon>
-    `;
+    import(`./icon-${this.icon}.js`);
+    return html`<sil-icon-${this.icon}>${this.icon}</sil-icon-${this.icon}>`;
   }
 }
 
