@@ -15,6 +15,7 @@ export const components = {
   card: `${base.prefix}-card`,
   button: `${base.prefix}-button`,
   menuToggle: `${base.prefix}-menu-toggle`,
+  icon: `${base.prefix}-icon`,
 } as const;
 
 export const getComponent = (component: keyof typeof components) => {

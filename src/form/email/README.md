@@ -4,8 +4,6 @@ icon: @
 
 # E-mail
 
-<script type="module" src="/assets/dist/text.js"></script>
-
 A simple email input field
 
 ## Example

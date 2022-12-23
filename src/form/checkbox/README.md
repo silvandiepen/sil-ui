@@ -4,8 +4,6 @@ icon: ✓
 
 # Checkbox
 
-<script type="module" src="/assets/dist/checkbox.js"></script>
-
 A simple checkbox
 
 ## Example

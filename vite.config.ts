@@ -1,7 +1,10 @@
 import { defineConfig } from "vite";
-import { components } from "./src/base";
 
-// https://vitejs.dev/config/
+import { components } from "./src/base";
+import { iconList } from "./src/icons/list";
+
+const iconPaths = iconList.map((i: string) => (i = `src/icons/${i}/${i}`));
+
 export default defineConfig({
   build: {
     lib: {
@@ -20,13 +23,11 @@ export default defineConfig({
         "src/elements/card/card",
         "src/elements/button/button",
         "src/elements/menu-toggle/menu-toggle",
+        ...iconPaths,
       ],
       formats: ["es"],
     },
     minify: true,
-    // rollupOptions: {
-    //   external: /^lit/,
-    // },
   },
   css: {
     preprocessorOptions: {

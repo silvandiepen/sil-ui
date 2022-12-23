@@ -4,8 +4,6 @@ icon: T
 
 # Text
 
-<script type="module" src="/assets/dist/text.js"></script>
-
 A simple text input field
 
 ## Example

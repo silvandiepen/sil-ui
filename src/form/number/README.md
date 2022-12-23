@@ -4,8 +4,6 @@ icon: 1
 
 # Number
 
-<script type="module" src="/assets/dist/number.js"></script>
-
 A simple number input field
 
 ## Example

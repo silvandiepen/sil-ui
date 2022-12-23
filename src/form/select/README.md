@@ -4,8 +4,6 @@ icon: ↓
 
 # Select
 
-<script type="module" src="/assets/dist/select.js"></script>
-
 A styled select which accepts an array of objects
 
 ## Example

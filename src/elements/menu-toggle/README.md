@@ -4,8 +4,6 @@ icon: ↓
 
 # Button
 
-<script type="module" src="/assets/dist/menuToggle.js"></script>
-
 A styled card
 
 ## Example

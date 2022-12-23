@@ -4,18 +4,16 @@ icon: ↓
 
 # Button
 
-<script type="module" src="/assets/dist/card.js"></script>
-
 A styled card
 
 ## Example
 
-<sil-card>
+<sil-button>
 My content
-</sil-card>
+</sil-button>
 
 ```html
-<sil-card> My content </sil-card>
+<sil-button> My content </sil-button>
 ```
 
 ## Usage
@@ -29,7 +27,7 @@ Install
 Use
 
 ```html
-<sil-card></sil-card>
+<sil-button></sil-button>
 ```
 
 ## Props

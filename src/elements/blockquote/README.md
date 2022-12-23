@@ -4,8 +4,6 @@ icon: ‟
 
 # Blockquote
 
-<script type="module" src="/assets/dist/blockquote.js"></script>
-
 A styled blockquote
 
 ## Example

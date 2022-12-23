@@ -4,8 +4,6 @@ icon: T
 
 # TextArea
 
-<script type="module" src="/assets/dist/textarea.js"></script>
-
 A simple large text input field
 
 ## Example

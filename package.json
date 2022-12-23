@@ -22,6 +22,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:icons": "sh ./icons/template/script.sh",
     "vscode:prepublish": "npm run build"
   },
   "dependencies": {
@@ -30,6 +31,8 @@
     "lit": "^2.4.1"
   },
   "devDependencies": {
+    "icon-components": "^1.6.1",
+    "prettier": "^2.8.1",
     "sass": "^1.57.1",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
