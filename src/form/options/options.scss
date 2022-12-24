@@ -1,0 +1,14 @@
+@use "sass:map";
+@import "../form.scss";
+
+.#{map.get($components,'stack')} {
+  gap: 1em;
+  padding: 1em;
+  display: flex;
+  &--horizontal {
+    flex-direction: row;
+  }
+  &--vertical {
+    flex-direction: column;
+  }
+}

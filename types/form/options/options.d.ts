@@ -1,18 +1,18 @@
 import { LitElement } from "lit";
-export declare class Email extends LitElement {
+export declare class Options extends LitElement {
     static styles: import("lit").CSSResult;
+    items: {
+        name: string;
+        value: string;
+    }[];
+    multiple: boolean;
     label: string;
-    id: string;
     name: string;
-    value: string;
-    required: boolean;
-    placeholder: string;
-    preview: boolean;
-    handleChange(e: any): void;
+    id: string;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        "sil-email": Email;
+        "form-options": Options;
     }
 }

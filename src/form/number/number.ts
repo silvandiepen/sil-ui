@@ -1,6 +1,7 @@
 import { LitElement, unsafeCSS, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { useBemm } from "bemm";
+import { useId } from "@sil/id";
 import styles from "./number.scss?inline";
 import { getComponent, DefaultErrors } from "../../base";
 
@@ -24,7 +25,7 @@ export class Number extends LitElement {
   required = false;
 
   @property({ type: String })
-  requiredError = DefaultErrors.required
+  requiredError = DefaultErrors.required;
 
   @property({ type: Number || null })
   min = null;
@@ -66,6 +67,10 @@ export class Number extends LitElement {
     const { bemm, classes } = useBemm(getComponent("number"), {
       return: "string",
     });
+    const id = useId({ total: 10 });
+    const identifier = this.id ? this.id : `checkbox-${id()}`;
+
+
     return html`
       <div
         class="${classes(
@@ -88,6 +93,7 @@ export class Number extends LitElement {
           </div>
           <input
             type="number"
+            id="${identifier}"
             class="${bemm("control")}"
             ${this.min !== null ? 'min="' + this.min + '"' : null}
             ${this.max !== null ? 'max="' + this.max + '"' : null}
@@ -97,7 +103,7 @@ export class Number extends LitElement {
             @blur="${this.handleChange}"
           />
         </div>
-        <label class="${bemm("label")}">${this.label}</label>
+        <label for="${identifier}" class="${bemm("label")}">${this.label}</label>
       </div>
     `;
   }

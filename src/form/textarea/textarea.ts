@@ -1,6 +1,7 @@
 import { LitElement, unsafeCSS, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { useBemm } from "bemm";
+import { useId } from "@sil/id";
 
 import { getComponent, DefaultErrors } from "../../base";
 import styles from "./textarea.scss?inline";
@@ -14,6 +15,9 @@ export class TextArea extends LitElement {
 
   @property({ type: String })
   label = "";
+
+  @property({ type: String })
+  id = "";
 
   @property({ type: String })
   value = "";
@@ -42,7 +46,7 @@ export class TextArea extends LitElement {
     this.value = e.target.value;
     if (this.resize) this.autoSize(e);
     this._touched = true;
-    this.typeWriter()
+    this.typeWriter();
   }
 
   typeWriter() {
@@ -57,6 +61,11 @@ export class TextArea extends LitElement {
     const { bemm, classes } = useBemm(getComponent("textarea"), {
       return: "string",
     });
+    const id = useId({
+      total: 8,
+    });
+    const identifier = this.id ? this.id : `checkbox-${id()}`;
+
     return html`
       <div
         class="${classes(
@@ -74,7 +83,7 @@ export class TextArea extends LitElement {
           : null}
         <div class="${bemm("input")}">
           <textarea
-            id="${this.id}"
+            id="${identifier}"
             class="${bemm("control")}"
             placeholder="${this.placeholder}"
             value="${this.value}"
@@ -83,7 +92,9 @@ export class TextArea extends LitElement {
             @blur="${this.handleChange}"
           ></textarea>
         </div>
-        <label for="${this.id}" class="${bemm("label")}">${this.label}</label>
+        <label for="${identifier}" class="${bemm("label")}"
+          >${this.label}</label
+        >
       </div>
     `;
   }

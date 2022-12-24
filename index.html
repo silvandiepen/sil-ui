@@ -14,6 +14,7 @@
     <script type="module" src="/src/form/checkbox"></script>
     <script type="module" src="/src/form/switch"></script>
     <script type="module" src="/src/form/radio"></script>
+    <script type="module" src="/src/form/options"></script>
     <script type="module" src="/src/elements/menu-toggle"></script>
     <script type="module" src="/src/elements/icon"></script>
     <script type="module" src="/src/icons/icon-printer/icon-printer"></script>
@@ -26,7 +27,7 @@
         width: 320px;
         margin: auto;
       }
-      :root{
+      :root {
         --icon-size: 48px;
       }
     </style>
@@ -35,20 +36,15 @@
     <sil-menu-toggle></sil-menu-toggle>
 
     <sil-stack>
-
       <sil-icon icon="arrow-up"></sil-icon>
       <sil-icon-printer></sil-icon-printer>
       <sil-text id="text-input" required label="Text"></sil-text>
       <sil-number required label="Number"></sil-number>
 
       <sil-select label="Select"></sil-select>
-      <script>
-        const select = document.querySelector("sil-select");
-        select.items = [
-          { name: "test", value: "something" },
-          { name: "test2", value: "something" },
-        ];
-      </script>
+      <!-- <sil-options label="Cities"></sil-options> -->
+      <sil-options label="Cities" multiple></sil-options>
+
       <sil-textarea required label="Text Area"></sil-textarea>
       <sil-checkbox required label="Checkbox"></sil-checkbox>
       <sil-switch labelOff="Switch Off" labelOn="Switch On"></sil-switch>
@@ -56,7 +52,19 @@
       <sil-radio label="Radio 3" name="my-field"></sil-radio>
       <sil-radio label="Radio 2" name="my-field"></sil-radio>
     </sil-stack>
+    <script>
+      const options = [
+        { name: "Amsterdam", value: "AMS" },
+        { name: "Paris", value: "PAR" },
+        { name: "Berlin", value: "BER" },
+        { name: "Yerevan", value: "EVN" },
+      ];
+      const selectField = document.querySelector("sil-select");
+      selectField.items = options;
 
+      const optionField = document.querySelector("sil-options");
+      optionField.items = options;
+    </script>
     <!-- <div
       v-scope="{ testString: 'something', testNumber: 0, testOption:'hoi',testOptions: [{ name: 'kut', value:' nog kutter'},{ name: 'hoiii', value:'hoi'}] }"
     >

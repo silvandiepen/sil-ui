@@ -1,6 +1,7 @@
 import { LitElement, unsafeCSS, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { useBemm } from "bemm";
+import { useId } from "@sil/id";
 import styles from "./radio.scss?inline";
 import { getComponent } from "../../base";
 
@@ -30,17 +31,22 @@ export class RadioField extends LitElement {
 
   render() {
     const bemm = useBemm(getComponent('radio'));
+    const id = useId({
+      total: 8
+    });
+    const identifier = this.id ? this.id : `checkbox-${id()}`;
+
     return html`
       <div class="${bemm()}">
         <input
-          id="radio"
+          id="${identifier}"
           name="${this.name}"
           type="radio"
           class="${bemm("control")}"
           value="${this.value}"
           @input="${this.handleChange}"
         />
-        <label for="radio" class="${bemm("label")}">${this.label}</label>
+        <label for="${identifier}" class="${bemm("label")}">${this.label}</label>
       </div>
     `;
   }

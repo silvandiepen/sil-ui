@@ -3,6 +3,7 @@ export declare class TextArea extends LitElement {
     static styles: import("lit").CSSResult;
     protected _touched: boolean;
     label: string;
+    id: string;
     value: string;
     required: boolean;
     requiredError: string;

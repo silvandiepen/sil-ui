@@ -1,6 +1,8 @@
 import { LitElement, unsafeCSS, html } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { useBemm } from "bemm";
+import { useId } from "@sil/id";
+
 import styles from "./checkbox.scss?inline";
 import { getComponent, DefaultErrors } from "../../base";
 
@@ -39,7 +41,14 @@ export class Checkbox extends LitElement {
   }
 
   render() {
-    const { bemm, classes } = useBemm(getComponent("checkbox"));
+    const { bemm, classes } = useBemm(getComponent("checkbox"), {
+      return: "string",
+    });
+    const id = useId({
+      total: 8,
+    });
+    const identifier = this.id ? this.id : `checkbox-${id()}`;
+
     return html`
       <div
         class="${classes(
@@ -53,7 +62,7 @@ export class Checkbox extends LitElement {
           ? html`<div class="${bemm("error")}">${this.requiredError}</div>`
           : null}
         <input
-          id="${this.id ? this.id : "check"}"
+          id="${identifier}"
           ${this.name ? `name="${this.name}"` : null}
           type="checkbox"
           class="${bemm("control")}"
@@ -61,7 +70,7 @@ export class Checkbox extends LitElement {
           @input="${this.handleChange}"
           @blur="${this.handleChange}"
         />
-        <label for="${this.id ? this.id : "check"}" class="${bemm("label")}"
+        <label for="${identifier}" class="${bemm("label")}"
           >${this.label}</label
         >
       </div>
