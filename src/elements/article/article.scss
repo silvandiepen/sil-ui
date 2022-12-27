@@ -178,6 +178,8 @@
 @mixin articleOverview() {
   $block: ".sil-article-overview";
   #{$block} {
+    position:relative;
+    z-index:1;
     padding: var(--article-overview-padding, var(--space-l, 2em));
     display: grid;
     grid-template-columns: var(
@@ -186,7 +188,7 @@
         auto-fill,
         var(
           --article-item-width,
-          minmax(var(--article-item-min-width, 320px), 1fr)
+          minmax(var(--article-item-min-width, 240px), 1fr)
         )
       )
     );
