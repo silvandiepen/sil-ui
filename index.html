@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Lit + TS</title>
     <link rel="stylesheet" href="./src/index.scss" />
-    <script type="module" src="/src/form/text"></script>
-    <script type="module" src="/src/form/number"></script>
-    <script type="module" src="/src/form/textarea"></script>
-    <script type="module" src="/src/form/select"></script>
-    <script type="module" src="/src/form/form"></script>
-    <script type="module" src="/src/form/checkbox"></script>
-    <script type="module" src="/src/form/switch"></script>
-    <script type="module" src="/src/form/radio"></script>
-    <script type="module" src="/src/form/options"></script>
-    <script type="module" src="/src/elements/menu-toggle"></script>
-    <script type="module" src="/src/elements/icon"></script>
-    <script type="module" src="/src/icons/icon-printer/icon-printer"></script>
-    <script type="module" src="/src/icons/icon-arrow-up/icon-arrow-up"></script>
+    <script type="module" src="/src/elements/article/article-item"></script>
+    <script type="module" src="/src/elements/article/article-overview"></script>
+    <!-- <script type="module" src="/src/form/text"></script> -->
+    <!-- <script type="module" src="/src/form/number"></script> -->
+    <!-- <script type="module" src="/src/form/textarea"></script> -->
+    <!-- <script type="module" src="/src/form/select"></script> -->
+    <!-- <script type="module" src="/src/form/form"></script> -->
+    <!-- <script type="module" src="/src/form/checkbox"></script> -->
+    <!-- <script type="module" src="/src/form/switch"></script> -->
+    <!-- <script type="module" src="/src/form/radio"></script> -->
+    <!-- <script type="module" src="/src/form/options"></script> -->
+    <!-- <script type="module" src="/src/elements/menu-toggle"></script> -->
+    <!-- <script type="module" src="/src/elements/icon"></script> -->
+    <!-- <script type="module" src="/src/elements/button"></script> -->
+    <!-- <script type="module" src="/src/icons/icon-printer/icon-printer"></script> -->
+    <!-- <script type="module" src="/src/icons/icon-arrow-up/icon-arrow-up"></script> -->
     <script src="https://unpkg.com/petite-vue" defer init></script>
 
     <style>
@@ -33,25 +36,151 @@
     </style>
   </head>
   <body>
-    <sil-menu-toggle></sil-menu-toggle>
+    <!-- <sil-menu-toggle></sil-menu-toggle> -->
 
-    <sil-stack>
-      <sil-icon icon="arrow-up"></sil-icon>
-      <sil-icon-printer></sil-icon-printer>
-      <sil-text id="text-input" required label="Text"></sil-text>
-      <sil-number required label="Number"></sil-number>
+    <!-- <sil-stack> -->
+      <sil-article-overview>
+        <sil-article-item
+          type="icon"
+          title="My Title"
+          link="/something"
+          excerpt="This is something I always wanted to say, now I did."
+          icon="S"
+        ></sil-article-item>
+        <sil-article-item
+          type="icon"
+          link="/something"
+          title="Something else"
+          excerpt="Are you sure? This will be a pretty long one. Just to see what it will do compared to the other ones. Shit this is already way too long."
+        ></sil-article-item>
+        <sil-article-item
+          link="/blog"
+          type="icon"
+          link="/something"
+          title="Or a pretty long title, could also be made"
+          excerpt="Woopsy, lets Go!"
+          image="https://images.unsplash.com/photo-1637984135921-301a7d39e3b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+        ></sil-article-item>
+        <sil-article-item
+          type="icon"
+          title="My Title"
+          excerpt="This is something I always wanted to say, now I did."
+          image="https://images.unsplash.com/photo-1669472377163-ee361bc4fe64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDQzfHFQWXNEenZKT1ljfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+        ></sil-article-item>
+        <sil-article-item
+          type="icon"
+          title="Something else"
+          excerpt="Are you sure? This will be a pretty long one. Just to see what it will do compared to the other ones. Shit this is already way too long."
+          image="https://images.unsplash.com/photo-1670611852866-8c493f369da5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDU0fHFQWXNEenZKT1ljfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+        ></sil-article-item>
+        <sil-article-item
+          type="icon"
+          title="Or a pretty long title, could also be made"
+          excerpt="Woopsy, lets Go!"
+          image="https://images.unsplash.com/photo-1670198089009-7ebf3747e106?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDYwfHFQWXNEenZKT1ljfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+        ></sil-article-item>
+      </sil-article-overview>
+    <sil-article-overview>
+      <sil-article-item
+        type="blog"
+        title="My Title"
+        link="/something"
+        excerpt="This is something I always wanted to say, now I did."
+        icon="S"
+      ></sil-article-item>
+      <sil-article-item
+        type="blog"
+        link="/something"
+        title="Something else"
+        excerpt="Are you sure? This will be a pretty long one. Just to see what it will do compared to the other ones. Shit this is already way too long."
+      ></sil-article-item>
+      <sil-article-item
+        link="/blog"
+        type="blog"
+        link="/something"
+        title="Or a pretty long title, could also be made"
+        excerpt="Woopsy, lets Go!"
+        image="https://images.unsplash.com/photo-1637984135921-301a7d39e3b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      ></sil-article-item>
+      <sil-article-item
+        type="blog"
+        title="My Title"
+        excerpt="This is something I always wanted to say, now I did."
+        image="https://images.unsplash.com/photo-1669472377163-ee361bc4fe64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDQzfHFQWXNEenZKT1ljfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+      ></sil-article-item>
+      <sil-article-item
+        type="blog"
+        title="Something else"
+        excerpt="Are you sure? This will be a pretty long one. Just to see what it will do compared to the other ones. Shit this is already way too long."
+        image="https://images.unsplash.com/photo-1670611852866-8c493f369da5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDU0fHFQWXNEenZKT1ljfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+      ></sil-article-item>
+      <sil-article-item
+        type="blog"
+        title="Or a pretty long title, could also be made"
+        excerpt="Woopsy, lets Go!"
+        image="https://images.unsplash.com/photo-1670198089009-7ebf3747e106?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDYwfHFQWXNEenZKT1ljfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+      ></sil-article-item>
+    </sil-article-overview>
 
-      <sil-select label="Select"></sil-select>
-      <!-- <sil-options label="Cities"></sil-options> -->
-      <sil-options label="Cities" multiple></sil-options>
+    <sil-article-overview>
+      <sil-article-item
+        title="My Title"
+        excerpt="This is something I always wanted to say, now I did."
+        link="/something"
+        icon="https://plus.unsplash.com/premium_photo-1670967473945-e63d428cab28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      ></sil-article-item>
+      <sil-article-item
+        icon="T"
+        link="/something"
+        title="Something else"
+        excerpt="Are you sure? This will be a pretty long one. Just to see what it will do compared to the other ones. Shit this is already way too long."
+        image="https://images.unsplash.com/photo-1671273976450-7d1944e5a2d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
+      ></sil-article-item>
+      <sil-article-item
+      author="Sil van Diepen"
+        title="Or a pretty long title, could also be made"
+        link="/something"
+        excerpt="Woopsy, lets Go!"
+        image="https://images.unsplash.com/photo-1637984135921-301a7d39e3b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+      ></sil-article-item>
+      <sil-article-item
+        title="My Title"
+        date="September 15, 1986"
+        author="Sil van Diepen"
+        excerpt="This is something I always wanted to say, now I did."
+        image="https://images.unsplash.com/photo-1669472377163-ee361bc4fe64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDQzfHFQWXNEenZKT1ljfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+      ></sil-article-item>
+      <sil-article-item
+        title="Something else"
+        excerpt="Are you sure? This will be a pretty long one. Just to see what it will do compared to the other ones. Shit this is already way too long."
+        image="https://images.unsplash.com/photo-1670611852866-8c493f369da5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDU0fHFQWXNEenZKT1ljfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+      ></sil-article-item>
+      <sil-article-item
+        title="Or a pretty long title, could also be made"
+        excerpt="Woopsy, lets Go!"
+        image="https://images.unsplash.com/photo-1670198089009-7ebf3747e106?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDYwfHFQWXNEenZKT1ljfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+      ></sil-article-item>
+    </sil-article-overview>
+    <!-- <sil-button>My Button</sil-button> -->
+    <!-- <sil-button type="ghost">My Button</sil-button> -->
+    <!-- <sil-button color="primary">My Button</sil-button> -->
+    <!-- <sil-button color="secondary" type="ghost" label="My Labelled Button"></sil-button> -->
+    <!-- <sil-icon icon="arrow-up"></sil-icon> -->
+    <!-- <sil-icon-printer></sil-icon-printer> -->
+    <!-- <sil-text id="text-input" required label="Text"></sil-text> -->
+    <!-- <sil-number required label="Number"></sil-number> -->
 
-      <sil-textarea required label="Text Area"></sil-textarea>
-      <sil-checkbox required label="Checkbox"></sil-checkbox>
-      <sil-switch labelOff="Switch Off" labelOn="Switch On"></sil-switch>
-      <sil-radio label="Radio 1" name="my-field"></sil-radio>
-      <sil-radio label="Radio 3" name="my-field"></sil-radio>
-      <sil-radio label="Radio 2" name="my-field"></sil-radio>
-    </sil-stack>
+    <!-- <sil-select label="Select"></sil-select> -->
+    <!-- <sil-options label="Cities"></sil-options> -->
+    <!-- <sil-options label="Cities" multiple></sil-options> -->
+
+    <!-- <sil-textarea required label="Text Area"></sil-textarea> -->
+    <!-- <sil-checkbox required label="Checkbox"></sil-checkbox> -->
+    <!-- <sil-switch labelOff="Switch Off" labelOn="Switch On"></sil-switch> -->
+    <!-- <sil-radio label="Radio 1" name="my-field"></sil-radio> -->
+    <!-- <sil-radio label="Radio 3" name="my-field"></sil-radio> -->
+    <!-- <sil-radio label="Radio 2" name="my-field"></sil-radio> -->
+    <!-- </sil-stack> -->
     <script>
       const options = [
         { name: "Amsterdam", value: "AMS" },
@@ -60,10 +189,10 @@
         { name: "Yerevan", value: "EVN" },
       ];
       const selectField = document.querySelector("sil-select");
-      selectField.items = options;
+      if (selectField) selectField.items = options;
 
       const optionField = document.querySelector("sil-options");
-      optionField.items = options;
+      if (optionField) optionField.items = options;
     </script>
     <!-- <div
       v-scope="{ testString: 'something', testNumber: 0, testOption:'hoi',testOptions: [{ name: 'kut', value:' nog kutter'},{ name: 'hoiii', value:'hoi'}] }"

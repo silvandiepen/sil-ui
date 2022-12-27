@@ -1,6 +1,66 @@
-.sil-button {
-    display: block;
-    border: 1px solid red;
-    padding: var(--space);
-  }
+$block: ".sil-button";
+#{$block} {
+  display: block;
+  border: var(--button-border, none);
+  padding: var(--button-padding, var(--space));
+  border-radius: var(--border-radius);
+  font-size: var(--button-font-size, 1em);
+  background-color: var(
+    --button-background-color,
+    var(--button-color, var(--foreground))
+  );
+  color: var(--button-text-color, var(--background));
+
+
+
   
+  &:hover {
+    // background-color: var(
+    //   --button--hover-background-color,
+    //   var(--button-hover-color, var(--foreground-50))
+    // );
+    #{$block}__text {
+      transform: scale(1.05);
+    }
+  }
+  &:focus {
+    outline: var(--button--focus-outline, none);
+    box-shadow: var(--button--focus-box-shadow, 0 0 2px 0 var(--primary));
+  }
+
+  &__text{
+    display: block;
+    transition: transform .125s ease-in-out;
+  }
+
+  /*
+  Types
+  */
+  &--ghost {
+    --button-background-color: var(
+      --button--ghost-background-color,
+      transparent
+    );
+    --button-text-color: var(
+      --button--ghost-text-color,
+      var(--button-color, var(--foreground))
+    );
+    --button-border: var(
+      --button--ghost-border,
+      2px solid
+        var(
+          --button--ghost-border-color,
+          var(--button-color, var(--foreground))
+        )
+    );
+  }
+  /*
+  Colors
+  */
+  $button-colors: ("primary", "secondary");
+  @each $button-color in $button-colors {
+    &--#{$button-color} {
+      --button-color: var(--#{$button-color});
+    }
+  }
+}

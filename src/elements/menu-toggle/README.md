@@ -1,19 +1,17 @@
 ---
-icon: ↓
+icon: ≡
 ---
 
-# Button
+# Menu Toggle
 
 A styled card
 
 ## Example
 
-<sil-card>
-My content
-</sil-card>
+<sil-menu-toggle></sil-menu-toggle>
 
 ```html
-<sil-card> My content </sil-card>
+<sil-menu-toggle></sil-menu-toggle>
 ```
 
 ## Usage
@@ -21,13 +19,13 @@ My content
 Install
 
 ```html
-<script type="module" src="https://unpkg.com/@sil/ui/menuToggle.js"></script>
+<script type="module" src="https://unpkg.com/@sil/ui/dist/menu-toggle.js"></script>
 ```
 
 Use
 
 ```html
-<sil-card></sil-card>
+<sil-menu-toggle></sil-menu-toggle>
 ```
 
 ## Props

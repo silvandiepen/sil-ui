@@ -19,7 +19,7 @@ A simple large text input field
 Install
 
 ```html
-<script type="module" src="https://unpkg.com/@sil/ui/textarea.js"></script>
+<script type="module" src="https://unpkg.com/@sil/ui/dist/textarea.js"></script>
 ```
 
 Use

@@ -139,6 +139,7 @@ $prefix: "input-field-" !default;
           -webkit-mask-size: 1em 1em;
           -webkit-mask-repeat: no-repeat;
           background-color: white;
+          pointer-events:none;
         }
       }
       &__control {

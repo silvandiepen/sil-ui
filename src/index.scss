@@ -3,21 +3,35 @@
 $colors: (
   dark: #0a113a,
   light: #fff,
-  primary: #f89afd,
+  primary: #ffb70f,
   secondary: #2bcd92,
   error: #e3471c,
   warning: #fac413,
 );
 
-@mixin getColorVariables($name,$value){
-  --#{$name}: rgba(var(--#{$name}-r),var(--#{$name}-g),var(--#{$name}-b), var(--#{$name}-opacity,1));
-  --#{$name}-r: #{red($value)};
-  --#{$name}-g: #{green($value)};
-  --#{$name}-b: #{blue($value)};
+@function text-color($color) {
+  @if lightness($color) > 50 {
+    @return map.get($colors, "dark");
+  } @else {
+    @return map.get($colors, "light");
+  }
 }
 
-:root{
-  @each $name, $value in $colors{
+@mixin getColorVariables($name, $value) {
+  --#{$name}: hsla(
+    var(--#{$name}-h),
+    var(--#{$name}-s),
+    var(--#{$name}-l),
+    var(--#{$name}-opacity, 1)
+  );
+  --#{$name}-h: #{hue($value)};
+  --#{$name}-s: #{saturation($value)};
+  --#{$name}-l: #{lightness($value)};
+  --#{$name}-text: #{text-color($value)};
+}
+
+:root {
+  @each $name, $value in $colors {
     @include getColorVariables($name, $value);
   }
 }
@@ -25,17 +39,18 @@ $colors: (
 :root {
   --border-radius: 0.33em;
   --space: 1em;
+  --space-l: 2em;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    @include getColorVariables('background',map.get($colors,'dark'));
-    @include getColorVariables('foreground',map.get($colors,'light'));
+    @include getColorVariables("background", map.get($colors, "dark"));
+    @include getColorVariables("foreground", map.get($colors, "light"));
   }
 }
 @media (prefers-color-scheme: light) {
   :root {
-    @include getColorVariables('background',map.get($colors,'light'));
-    @include getColorVariables('foreground',map.get($colors,'dark'));
+    @include getColorVariables("background", map.get($colors, "light"));
+    @include getColorVariables("foreground", map.get($colors, "dark"));
   }
 }
 
@@ -45,4 +60,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
 }

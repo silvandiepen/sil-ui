@@ -21,7 +21,7 @@ My quote
 Install
 
 ```html
-<script type="module" src="https://unpkg.com/@sil/ui/blockquote.js"></script>
+<script type="module" src="https://unpkg.com/@sil/ui/dist/blockquote.js"></script>
 ```
 
 Use

@@ -19,7 +19,7 @@ A simple number input field
 Install
 
 ```html
-<script type="module" src="https://unpkg.com/@sil/ui/number.js"></script>
+<script type="module" src="https://unpkg.com/@sil/ui/dist/number.js"></script>
 ```
 
 Use

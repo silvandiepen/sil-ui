@@ -18,6 +18,9 @@ export const components = {
   icon: `${base.prefix}-icon`,
   list: `${base.prefix}-list`,
   options: `${base.prefix}-options`,
+  articleLink: `${base.prefix}-article-link`,
+  articleItem: `${base.prefix}-article-item`,
+  articleOverview: `${base.prefix}-article-overview`,
 } as const;
 
 export const getComponent = (component: keyof typeof components) => {

@@ -24,6 +24,8 @@ export default defineConfig({
         "src/elements/button/button",
         "src/elements/menu-toggle/menu-toggle",
         "src/elements/icon/icon",
+        "src/elements/article/article-item",
+        "src/elements/article/article-overview",
         ...iconPaths,
       ],
       formats: ["es"],

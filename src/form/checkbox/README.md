@@ -19,7 +19,7 @@ A simple checkbox
 Install
 
 ```html
-<script type="module" src="https://unpkg.com/@sil/ui/checkbox.js"></script>
+<script type="module" src="https://unpkg.com/@sil/ui/dist/checkbox.js"></script>
 ```
 
 Use

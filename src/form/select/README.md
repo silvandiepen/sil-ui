@@ -62,7 +62,7 @@ select.items = [
 Install
 
 ```html
-<script type="module" src="https://unpkg.com/@sil/ui/select.js"></script>
+<script type="module" src="https://unpkg.com/@sil/ui/dist/select.js"></script>
 ```
 
 Use

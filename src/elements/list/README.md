@@ -21,7 +21,7 @@ My content
 Install
 
 ```html
-<script type="module" src="https://unpkg.com/@sil/ui/list.js"></script>
+<script type="module" src="https://unpkg.com/@sil/ui/dist/list.js"></script>
 ```
 
 Use

@@ -19,7 +19,7 @@ A simple text input field
 Install
 
 ```html
-<script type="module" src="https://unpkg.com/@sil/ui/switch.js"></script>
+<script type="module" src="https://unpkg.com/@sil/ui/dist/switch.js"></script>
 ```
 
 Use

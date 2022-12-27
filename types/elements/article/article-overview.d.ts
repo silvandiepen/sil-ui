@@ -1,14 +1,10 @@
 import { LitElement } from "lit";
-export declare class Button extends LitElement {
+export declare class ArticleOverview extends LitElement {
     static styles: import("lit").CSSResult;
-    icon: string;
-    label: string;
-    type: string;
-    color: string;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
     interface HTMLElementTagNameMap {
-        "sil-button": Button;
+        "sil-article-overview": ArticleOverview;
     }
 }
