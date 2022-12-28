@@ -1,3 +1,6 @@
-body{
-  --article-item-min-width:180px;
+.archive--articles {
+  --article-item-min-width: 180px;
+}
+.archive--blog {
+  --article-item-min-width: 100%;
 }

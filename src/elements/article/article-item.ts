@@ -11,6 +11,12 @@ const ArticleItemType = {
   ICON: "icon",
 };
 
+const ArticleItemShowImage = {
+  AUTO: "auto",
+  TRUE: true,
+  FALSE: false,
+};
+
 @customElement(getComponent("articleItem"))
 export class ArticleItem extends LitElement {
   static styles = unsafeCSS(styles);
@@ -42,6 +48,9 @@ export class ArticleItem extends LitElement {
   @property({ type: String })
   type = ArticleItemType.BLOCK;
 
+  @property({ type: Boolean || String })
+  showImage = true;
+
   render() {
     const { classes, bemm } = useBemm(getComponent("articleItem"), {
       return: "string",
@@ -54,7 +63,7 @@ export class ArticleItem extends LitElement {
     );
 
     const iconImage = this.icon
-      ? [".jpg", ".svg", ".gif", "png", ".jpeg", "http"].some((format) =>
+      ? [".jpg", ".svg", ".gif", "png", ".jpeg","http"].some((format) =>
           this.icon.includes(format)
         )
       : false;
@@ -85,30 +94,43 @@ export class ArticleItem extends LitElement {
       if (this.link) window.location.href = this.link;
     };
 
+
+
+    const has = (prop: string)=>{
+      return (
+        prop &&
+       prop !== "null" &&
+        prop !== "undefined" &&
+        prop !== undefined
+      );
+    }
+
     return html`
       <article class="${mainClasses}" @click="${handleClick}">
-        <figure
-          class="${classes(
-            "image",
-            !this.image && { e: "image", m: "no-image" },
-            this.icon !== "?" && { e: "image", m: "has-icon" }
-          )}"
-        >
-          ${this.image ? html`<img src="${this.image}" />` : null}
-          ${!this.image ? icon : null}
-        </figure>
+        ${this.showImage
+          ? html`<figure
+              class="${classes(
+                "image",
+                !has(this.image) && { e: "image", m: "no-image" },
+                this.icon !== "?" && { e: "image", m: "has-icon" }
+              )}"
+            >
+              ${has(this.image) ? html`<img src="${this.image}" />` : null}
+              ${!has(this.image) ? icon : null}
+            </figure>`
+          : null}
 
         <div class="${bemm("detail")}">
-          ${this.date
+          ${has(this.date)
             ? html`<div class="${bemm("date")}">${this.date}</div>`
             : null}
-          ${this.title
+          ${has(this.title)
             ? html` <h3 class="${bemm("title")}">${this.title}</h3>`
             : null}
-          ${this.excerpt
+          ${has(this.excerpt)
             ? html`<p class="${bemm("excerpt")}">${this.excerpt}</p>`
             : null}
-          ${this.author
+          ${has(this.author)
             ? html`<div class="${bemm("author")}">${this.author}</div>`
             : null}
           <slot></slot>

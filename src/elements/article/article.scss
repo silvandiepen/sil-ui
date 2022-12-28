@@ -17,7 +17,10 @@
       top: calc(var(--space, 1em) * -1);
       z-index: -1;
       box-shadow: var(--article-item-box-shadow, 0 0 0 2px var(--foreground));
-      border-radius: var(--article-item-border-radius, calc(var(--border-radius, 1em) * 2));
+      border-radius: var(
+        --article-item-border-radius,
+        calc(var(--border-radius, 1em) * 2)
+      );
       opacity: var(--article-item-background-opacity, 0);
       transition: all 0.125s ease-in-out;
       transform: scale(0.95);
@@ -35,7 +38,6 @@
     }
 
     &__title {
-      // margin: 0;
       font-size: var(--article-item-title-font-size, inherit);
     }
 
@@ -44,6 +46,13 @@
       opacity: 0.8;
     }
 
+    &__date {
+      font-size: 0.75em;
+      opacity: 0.5;
+      & + #{$block}__title {
+        margin-top: 0.5em;
+      }
+    }
     &__image {
       margin: 0;
       max-width: 100%;
