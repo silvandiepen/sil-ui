@@ -11,12 +11,6 @@ const ArticleItemType = {
   ICON: "icon",
 };
 
-const ArticleItemShowImage = {
-  AUTO: "auto",
-  TRUE: true,
-  FALSE: false,
-};
-
 @customElement(getComponent("articleItem"))
 export class ArticleItem extends LitElement {
   static styles = unsafeCSS(styles);
@@ -63,7 +57,7 @@ export class ArticleItem extends LitElement {
     );
 
     const iconImage = this.icon
-      ? [".jpg", ".svg", ".gif", "png", ".jpeg","http"].some((format) =>
+      ? [".jpg", ".svg", ".gif", "png", ".jpeg", "http"].some((format) =>
           this.icon.includes(format)
         )
       : false;
@@ -94,16 +88,11 @@ export class ArticleItem extends LitElement {
       if (this.link) window.location.href = this.link;
     };
 
-
-
-    const has = (prop: string)=>{
+    const has = (prop: string) => {
       return (
-        prop &&
-       prop !== "null" &&
-        prop !== "undefined" &&
-        prop !== undefined
+        prop && prop !== "null" && prop !== "undefined" && prop !== undefined
       );
-    }
+    };
 
     return html`
       <article class="${mainClasses}" @click="${handleClick}">
