@@ -1,8 +1,3 @@
-/* body {
-  --foreground: var(--ol-foreground);
-  --primary: var(--ol-primary);
-  --warning:var(--ol-warning);
-  --error:var(--ol-error);
-  --warning-text:var(--ol-warning-text);
-  --error-text:var(--ol-error-text);
-} */
+body{
+  --article-item-min-width:180px;
+}

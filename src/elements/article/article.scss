@@ -4,6 +4,8 @@
     border-radius: var(--article-item-border-radius, var(--border-radius));
     color: var(--article-item-text-color, inherit);
     position: relative;
+    z-index: 1;
+
     &::before {
       content: "";
       background-color: var(--article-item-background-color, transparent);
@@ -15,7 +17,7 @@
       top: calc(var(--space, 1em) * -1);
       z-index: -1;
       box-shadow: var(--article-item-box-shadow, 0 0 0 2px var(--foreground));
-      border-radius: calc(var(--border-radius, 1em) * 2);
+      border-radius: var(--article-item-border-radius, calc(var(--border-radius, 1em) * 2));
       opacity: var(--article-item-background-opacity, 0);
       transition: all 0.125s ease-in-out;
       transform: scale(0.95);
@@ -23,6 +25,7 @@
 
     &__detail {
       padding: var(--article-item-detail-padding, var(--space, 1em));
+      font-size: var(--article-item-detail-font-size, inherit);
       * {
         margin: 0;
         & + * {
@@ -37,7 +40,7 @@
     }
 
     &__excerpt {
-      font-size: var(--article-item-excerpt-font-size, inherit);
+      font-size: var(--article-item-excerpt-font-size, 0.875em);
       opacity: 0.8;
     }
 
@@ -85,15 +88,15 @@
       font-size: var(--article-item-icon-font-size, 1.5em);
       text-align: center;
       border-radius: var(
-        --article-item-icon-container-border-radius,
+        --article-item-icon-border-radius,
         var(--border-radius)
       );
       display: block;
       background-color: var(
-        --article-item-icon-container-background-color,
+        --article-item-icon-background-color,
         var(--background)
       );
-      color: var(--article-item-icon-container-text-color, var(--foreground));
+      color: var(--article-item-icon-text-color, var(--foreground));
       transform: scale(var(--scale, 1));
 
       &--has-image {
@@ -149,12 +152,12 @@
       }
       --article-item-image-width: 4em;
       --article-item-image-height: 4em;
+      --article-item-border-radius: var(--border-radius, 1em);
 
       --article-item-icon-font-size: 2em;
-
-      --article-item-icon-container-background-color: var(--primary);
-      --article-item-icon-container-text-color: var(--background);
-      --article-item-icon-container-border-radius: 50%;
+      --article-item-icon-background-color: var(--primary);
+      --article-item-icon-text-color: var(--background);
+      --article-item-icon-border-radius: 50%;
 
       --article-item-box-shadow: none;
       --article-item-detail-padding: 0;
@@ -165,8 +168,8 @@
           --article-item-background-opacity: 1;
           --article-item-background-opacity--hover: 1;
           --article-item-background-color: var(--primary);
-          --article-item-icon-container-background-color: var(--foreground);
-          --article-item-icon-container-text-color: var(--background);
+          --article-item-icon-background-color: var(--foreground);
+          --article-item-icon-text-color: var(--background);
           #{$block}__icon-container {
             --scale: 1;
           }
@@ -178,8 +181,8 @@
 @mixin articleOverview() {
   $block: ".sil-article-overview";
   #{$block} {
-    position:relative;
-    z-index:1;
+    position: relative;
+    z-index: 1;
     padding: var(--article-overview-padding, var(--space-l, 2em));
     display: grid;
     grid-template-columns: var(
