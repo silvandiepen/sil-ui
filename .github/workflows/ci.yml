@@ -30,6 +30,6 @@ jobs:
         run: npm test --if-present
 
       - name: version & publish
-        uses: silvandiepen/conventional-changelog-npm-publish
+        uses: silvandiepen/conventional-changelog-npm-publish@v16
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
