@@ -1,5 +1,6 @@
 ---
 archive: articles
+archiveTitle: Basic Elements
 ---
 
 # Elements
