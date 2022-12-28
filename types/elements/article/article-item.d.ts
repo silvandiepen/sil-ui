@@ -10,6 +10,7 @@ export declare class ArticleItem extends LitElement {
     timestamp: string;
     icon: string;
     type: string;
+    showImage: boolean;
     render(): import("lit-html").TemplateResult<1>;
 }
 declare global {
