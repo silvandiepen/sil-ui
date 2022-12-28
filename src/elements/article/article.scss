@@ -43,7 +43,12 @@
 
     &__excerpt {
       font-size: var(--article-item-excerpt-font-size, 0.875em);
-      opacity: 0.8;
+      opacity: var(--article-item-excerpt-opacity, 0.8);
+    }
+    &__author {
+      font-size: var(--article-item-author-font-size, 0.875em);
+      opacity: var(--article-item-author-opacity, 0.8);
+      text-align: var(--article-item-author-text-align, left);
     }
 
     &__date {
