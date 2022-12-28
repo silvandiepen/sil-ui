@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       # Setup .npmrc file to publish to npm
-      - name: Checkout
+      - name: Node
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
@@ -29,9 +29,7 @@ jobs:
       - name: Test
         run: npm test --if-present
 
-      - name: Version
-        run: npm version patch
-
-      - run: npm publish
+      - name: version & publish
+        uses: geeman201/conventional-changelog-npm-publish/@v14
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
