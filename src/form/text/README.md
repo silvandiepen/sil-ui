@@ -19,7 +19,7 @@ A simple text input field
 Install
 
 ```html
-<script type="module" src="https://unpkg.com/@sil/ui/dist/text.js"></script>
+<script type="module" src="https://load.ui.sil.mt/text.js"></script>
 ```
 
 Use

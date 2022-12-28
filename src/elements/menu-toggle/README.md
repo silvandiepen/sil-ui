@@ -19,7 +19,7 @@ A styled card
 Install
 
 ```html
-<script type="module" src="https://unpkg.com/@sil/ui/dist/menu-toggle.js"></script>
+<script type="module" src="https://load.ui.sil.mt/menu-toggle.js"></script>
 ```
 
 Use

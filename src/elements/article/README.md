@@ -23,8 +23,8 @@ A styled article overview, items
 Install
 
 ```html
-<script type="module" src="https://unpkg.com/@sil/ui/dist/article-overview.js"></script>
-<script type="module" src="https://unpkg.com/@sil/ui/dist/article-item.js"></script>
+<script type="module" src="https://load.ui.sil.mt/article-overview.js"></script>
+<script type="module" src="https://load.ui.sil.mt/article-item.js"></script>
 ```
 
 Use

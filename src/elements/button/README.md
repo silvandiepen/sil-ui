@@ -21,7 +21,7 @@ My content
 Install
 
 ```html
-<script type="module" src="https://unpkg.com/@sil/ui/dist/button.js"></script>
+<script type="module" src="https://load.ui.sil.mt/button.js"></script>
 ```
 
 Use

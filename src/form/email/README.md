@@ -19,7 +19,7 @@ A simple email input field
 Install
 
 ```html
-<script type="module" src="https://unpkg.com/@sil/ui/dist/email.js"></script>
+<script type="module" src="https://load.ui.sil.mt/email.js"></script>
 ```
 
 Use
