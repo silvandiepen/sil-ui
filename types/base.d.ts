@@ -18,8 +18,9 @@ export declare const components: {
     readonly articleLink: `${string}-article-link`;
     readonly articleItem: `${string}-article-item`;
     readonly articleOverview: `${string}-article-overview`;
+    readonly colorMode: `${string}-color-mode`;
 };
-export declare const getComponent: (component: keyof typeof components) => `${string}-text` | `${string}-email` | `${string}-textarea` | `${string}-stack` | `${string}-radio` | `${string}-checkbox` | `${string}-number` | `${string}-select` | `${string}-switch` | `${string}-blockquote` | `${string}-card` | `${string}-button` | `${string}-menu-toggle` | `${string}-icon` | `${string}-list` | `${string}-options` | `${string}-article-link` | `${string}-article-item` | `${string}-article-overview`;
+export declare const getComponent: (component: keyof typeof components) => `${string}-text` | `${string}-email` | `${string}-textarea` | `${string}-stack` | `${string}-radio` | `${string}-checkbox` | `${string}-number` | `${string}-select` | `${string}-switch` | `${string}-blockquote` | `${string}-card` | `${string}-button` | `${string}-menu-toggle` | `${string}-icon` | `${string}-list` | `${string}-options` | `${string}-article-link` | `${string}-article-item` | `${string}-article-overview` | `${string}-color-mode`;
 export declare const getComponentName: (component: string) => string;
 export declare const DefaultErrors: {
     required: string;
