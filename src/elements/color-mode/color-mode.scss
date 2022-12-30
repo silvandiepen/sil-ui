@@ -1,0 +1,66 @@
+.sil-color-mode {
+  $p: "color-mode-";
+  --#{$p}width: 3em;
+  --#{$p}height: 2em;
+  --#{$p}space: 2px;
+  --#{$p}border-width: 2px;
+  --#{$p}background-color: transparent;
+  --#{$p}color: var(--foreground, currentColor);
+  width: var(--#{$p}width);
+  height: var(--#{$p}height);
+  border-radius: calc(var(--#{$p}height) / 2);
+  background-color: var(--#{$p}background-color);
+  text-indent: -999em;
+  border: var(--#{$p}border-width) solid var(--#{$p}color);
+  position: relative;
+  &,
+  * {
+    box-sizing: border-box;
+  }
+
+  &::before {
+    --#{$p}dot-size: calc(
+      var(--#{$p}height) -
+        ((var(--#{$p}space) + var(--#{$p}border-width)) * 2)
+    );
+    content: "";
+    width: var(--#{$p}dot-size);
+    height: var(--#{$p}dot-size);
+    border-radius: 50%;
+    background-color: var(--#{$p}color);
+    display: block;
+    top: 50%;
+    left: 50%;
+
+    --x: -50%;
+    --x-space: calc(var(--#{$p}space) + var(--#{$p}border-width));
+
+    transform: translate(var(--x), -50%);
+    position: absolute;
+    transition: left;
+    transition: transform 0.3s, box-shadow 0.3s, background-image 0.3s;
+    box-shadow: 0 0 0em 0em var(--background);
+    background-image: radial-gradient(
+      circle at 200%,
+      var(--background) 50%,
+      transparent 50%
+    );
+  }
+  &--dark {
+    &::before {
+      --x: calc(((var(--#{$p}width) / 2) * -1) + var(--x-space));
+      --mask: radial-gradient(circle at 100%, transparent 50%, white 50%);
+
+      -webkit-mask-image: var(--mask);
+    }
+  }
+  &--light {
+    background-color: var(--#{$p}color);
+    &::before {
+      --x: calc((-100% + (var(--#{$p}width) / 2)) - var(--x-space));
+
+      box-shadow: 0 0 1em 0.25em var(--background);
+      background-color: var(--background);
+    }
+  }
+}

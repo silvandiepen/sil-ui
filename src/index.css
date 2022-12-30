@@ -1,0 +1,73 @@
+:root {
+  --border-radius: 0.33em;
+  --space: 1em;
+  --space-l: 2em;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: hsla(var(--dark-h,0deg), var(--dark-s,0%), var(--dark-l,0%), var(--dark-a,1));
+    --foreground: hsla(var(--light-h,0deg), var(--light-s,0%), var(--light-l,100%), var(--light-a,1));
+    --background-text: hsla(var(--background-text-h,0deg), var(--background-text-s,0%), var(--background-text-l,100%), var(--background-text-a,1));
+    --foreground-text: hsla(var(--foreground-text-h,0deg), var(--foreground-text-s,0%), var(--foreground-text-l,0%), var(--foreground-text-a,1));
+    --dark: hsla(var(--dark-h,0deg), var(--dark-s,0%), var(--dark-l,0%), var(--dark-a,1));
+    --light: hsla(var(--light-h,0deg), var(--light-s,0%), var(--light-l,100%), var(--light-a,1));
+    --primary: hsla(var(--primary-h,42deg), var(--primary-s,100%), var(--primary-l,52.9411764706%), var(--primary-a,1));
+    --secondary: hsla(var(--secondary-h,158.1481481481deg), var(--secondary-s,65.3225806452%), var(--secondary-l,48.6274509804%), var(--secondary-a,1));
+    --error: hsla(var(--error-h,12.9648241206deg), var(--error-s,78.0392156863%), var(--error-l,50%), var(--error-a,1));
+    --warning: hsla(var(--warning-h,45.974025974deg), var(--warning-s,95.8506224066%), var(--warning-l,52.7450980392%), var(--warning-a,1));
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: hsla(var(--light-h,0deg), var(--light-s,0%), var(--light-l,100%), var(--light-a,1));
+    --foreground: hsla(var(--dark-h,0deg), var(--dark-s,0%), var(--dark-l,0%), var(--dark-a,1));
+    --background-text: hsla(var(--background-text-h,0deg), var(--background-text-s,0%), var(--background-text-l,0%), var(--background-text-a,1));
+    --foreground-text: hsla(var(--foreground-text-h,0deg), var(--foreground-text-s,0%), var(--foreground-text-l,100%), var(--foreground-text-a,1));
+    --dark: hsla(var(--dark-h,0deg), var(--dark-s,0%), var(--dark-l,0%), var(--dark-a,1));
+    --light: hsla(var(--light-h,0deg), var(--light-s,0%), var(--light-l,100%), var(--light-a,1));
+    --primary: hsla(var(--primary-h,42deg), var(--primary-s,100%), var(--primary-l,52.9411764706%), var(--primary-a,1));
+    --secondary: hsla(var(--secondary-h,158.1481481481deg), var(--secondary-s,65.3225806452%), var(--secondary-l,48.6274509804%), var(--secondary-a,1));
+    --error: hsla(var(--error-h,12.9648241206deg), var(--error-s,78.0392156863%), var(--error-l,50%), var(--error-a,1));
+    --warning: hsla(var(--warning-h,45.974025974deg), var(--warning-s,95.8506224066%), var(--warning-l,52.7450980392%), var(--warning-a,1));
+  }
+}
+body[color-mode=dark] {
+  --background: hsla(var(--dark-h,0deg), var(--dark-s,0%), var(--dark-l,0%), var(--dark-a,1));
+  --foreground: hsla(var(--light-h,0deg), var(--light-s,0%), var(--light-l,100%), var(--light-a,1));
+  --background-text: hsla(var(--background-text-h,0deg), var(--background-text-s,0%), var(--background-text-l,100%), var(--background-text-a,1));
+  --foreground-text: hsla(var(--foreground-text-h,0deg), var(--foreground-text-s,0%), var(--foreground-text-l,0%), var(--foreground-text-a,1));
+  --dark: hsla(var(--dark-h,0deg), var(--dark-s,0%), var(--dark-l,0%), var(--dark-a,1));
+  --light: hsla(var(--light-h,0deg), var(--light-s,0%), var(--light-l,100%), var(--light-a,1));
+  --primary: hsla(var(--primary-h,42deg), var(--primary-s,100%), var(--primary-l,52.9411764706%), var(--primary-a,1));
+  --secondary: hsla(var(--secondary-h,158.1481481481deg), var(--secondary-s,65.3225806452%), var(--secondary-l,48.6274509804%), var(--secondary-a,1));
+  --error: hsla(var(--error-h,12.9648241206deg), var(--error-s,78.0392156863%), var(--error-l,50%), var(--error-a,1));
+  --warning: hsla(var(--warning-h,45.974025974deg), var(--warning-s,95.8506224066%), var(--warning-l,52.7450980392%), var(--warning-a,1));
+}
+
+body[color-mode=light] {
+  --background: hsla(var(--light-h,0deg), var(--light-s,0%), var(--light-l,100%), var(--light-a,1));
+  --foreground: hsla(var(--dark-h,0deg), var(--dark-s,0%), var(--dark-l,0%), var(--dark-a,1));
+  --background-text: hsla(var(--background-text-h,0deg), var(--background-text-s,0%), var(--background-text-l,0%), var(--background-text-a,1));
+  --foreground-text: hsla(var(--foreground-text-h,0deg), var(--foreground-text-s,0%), var(--foreground-text-l,100%), var(--foreground-text-a,1));
+  --dark: hsla(var(--dark-h,0deg), var(--dark-s,0%), var(--dark-l,0%), var(--dark-a,1));
+  --light: hsla(var(--light-h,0deg), var(--light-s,0%), var(--light-l,100%), var(--light-a,1));
+  --primary: hsla(var(--primary-h,42deg), var(--primary-s,100%), var(--primary-l,52.9411764706%), var(--primary-a,1));
+  --secondary: hsla(var(--secondary-h,158.1481481481deg), var(--secondary-s,65.3225806452%), var(--secondary-l,48.6274509804%), var(--secondary-a,1));
+  --error: hsla(var(--error-h,12.9648241206deg), var(--error-s,78.0392156863%), var(--error-l,50%), var(--error-a,1));
+  --warning: hsla(var(--warning-h,45.974025974deg), var(--warning-s,95.8506224066%), var(--warning-l,52.7450980392%), var(--warning-a,1));
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=index.css.map */

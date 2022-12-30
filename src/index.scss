@@ -9,49 +9,30 @@ $colors: (
   warning: #fac413,
 );
 
-@function text-color($color) {
-  @if lightness($color) > 50 {
-    @return map.get($colors, "dark");
-  } @else {
-    @return map.get($colors, "light");
-  }
-}
-
-@mixin getColorVariables($name, $value) {
-  --#{$name}: hsla(
-    var(--#{$name}-h),
-    var(--#{$name}-s),
-    var(--#{$name}-l),
-    var(--#{$name}-opacity, 1)
-  );
-  --#{$name}-h: #{hue($value)};
-  --#{$name}-s: #{saturation($value)};
-  --#{$name}-l: #{lightness($value)};
-  --#{$name}-text: #{text-color($value)};
-}
-
-:root {
-  @each $name, $value in $colors {
-    @include getColorVariables($name, $value);
-  }
-}
+@import "../node_modules/@sil/sass-utils";
 
 :root {
   --border-radius: 0.33em;
   --space: 1em;
   --space-l: 2em;
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
-    @include getColorVariables("background", map.get($colors, "dark"));
-    @include getColorVariables("foreground", map.get($colors, "light"));
+    @include get-darkmode();
   }
 }
 @media (prefers-color-scheme: light) {
   :root {
-    @include getColorVariables("background", map.get($colors, "light"));
-    @include getColorVariables("foreground", map.get($colors, "dark"));
+    @include get-lightmode();
   }
+}
+body[color-mode="dark"] {
+  @include get-darkmode();
+}
+
+body[color-mode="light"] {
+  @include get-lightmode();
 }
 
 body {

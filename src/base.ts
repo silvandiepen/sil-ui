@@ -21,6 +21,7 @@ export const components = {
   articleLink: `${base.prefix}-article-link`,
   articleItem: `${base.prefix}-article-item`,
   articleOverview: `${base.prefix}-article-overview`,
+  colorMode: `${base.prefix}-color-mode`,
 } as const;
 
 export const getComponent = (component: keyof typeof components) => {

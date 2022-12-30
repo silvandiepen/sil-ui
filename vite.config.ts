@@ -26,6 +26,7 @@ export default defineConfig({
         "src/elements/icon/icon",
         "src/elements/article/article-item",
         "src/elements/article/article-overview",
+        "src/elements/color-mode/color-mode",
         ...iconPaths,
       ],
       formats: ["es"],

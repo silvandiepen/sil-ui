@@ -20,7 +20,8 @@
     "types"
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run dev:build:style --no-source-map && vite",
+    "dev:build:style": "sass src/index.scss src/index.css",
     "build": "tsc && vite build",
     "build:icons": "sh ./icons/template/script.sh",
     "vscode:prepublish": "npm run build"
@@ -31,6 +32,7 @@
     "lit": "^2.4.1"
   },
   "devDependencies": {
+    "@sil/sass-utils": "^0.0.2",
     "icon-components": "^1.6.1",
     "prettier": "^2.8.1",
     "sass": "^1.57.1",
