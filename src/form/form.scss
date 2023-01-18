@@ -139,7 +139,7 @@ $prefix: "input-field-" !default;
           -webkit-mask-size: 1em 1em;
           -webkit-mask-repeat: no-repeat;
           background-color: white;
-          pointer-events:none;
+          pointer-events: none;
         }
       }
       &__control {
@@ -188,6 +188,20 @@ $prefix: "input-field-" !default;
       }
     }
     @if contains($elements, "switch") {
+      $mods: ("active", "inactive");
+      @each $mod in $mods {
+        &--#{$mod} {
+          opacity: var(--switch-#{$mod}-opacity, inherit);
+          color: var(--switch-#{$mod}-color, inherit);
+          background-color: var(--switch-#{$mod}-background-color, inherit);
+        }
+      }
+
+      &--active {
+        #{$block}__control {
+          opacity: var(--switch-active-opacity, 1);
+        }
+      }
       &__control {
         width: 0;
         height: 0;
@@ -250,7 +264,7 @@ $prefix: "input-field-" !default;
           left: 0%;
           transform: translate(var(--switch-border-weight), -50%);
           border-radius: 50%;
-          transition: transform .2s ease-in-out;
+          transition: transform 0.2s ease-in-out;
         }
       }
       &__label {
@@ -278,10 +292,13 @@ $prefix: "input-field-" !default;
         }
         &:checked + .#{$block}__label::before {
           color: v("checked-text-color", var(--background));
-          border-color: v("checked-background-color", var(--foreground, currentColor));
+          border-color: v(
+            "checked-background-color",
+            var(--foreground, currentColor)
+          );
           background: radial-gradient(
             ellipse at center,
-           currentColor 0%,
+            currentColor 0%,
             currentColor 75%,
             transparent 75%
           );

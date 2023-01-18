@@ -45,7 +45,7 @@ export class Switch extends LitElement {
     return this.required && this._touched && !!!this.value;
   }
   render() {
-    const bemm = useBemm(getComponent("switch"), {
+    const { bemm, classes } = useBemm(getComponent("switch"), {
       return: "string",
     });
     const id = useId({
@@ -54,7 +54,7 @@ export class Switch extends LitElement {
     const identifier = this.id ? this.id : `checkbox-${id()}`;
 
     return html`
-      <div class="${bemm()}">
+      <div class="${classes("", { m: this.value ? "active" : "inactive" })}">
         ${this.hasError()
           ? html`<div class="${bemm("error")}">${this.requiredError}</div>`
           : null}
@@ -69,8 +69,8 @@ export class Switch extends LitElement {
           <div class="${bemm("switch")}"></div>
           ${this.label}
           ${this.value
-            ? html`<div>${this.labelOff}</div>`
-            : html`<div>${this.labelOn}</div>`}
+            ? this.labelOff && html`<div>${this.labelOff}</div>`
+            : this.labelOn && html`<div>${this.labelOn}</div>`}
         </label>
       </div>
     `;
