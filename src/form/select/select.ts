@@ -6,6 +6,16 @@ import { useId } from "@sil/id";
 import styles from "./select.scss?inline";
 import { getComponent, DefaultErrors } from "../../base";
 
+interface Item {
+  name: String;
+  value: String | Number;
+}
+
+interface ItemGroup {
+  label: String;
+  items: Item[];
+}
+
 @customElement(getComponent("select"))
 export class SelectField extends LitElement {
   static styles = unsafeCSS(styles);
@@ -32,7 +42,9 @@ export class SelectField extends LitElement {
   preview = false;
 
   @property({ type: Array })
-  items = [{ name: "", value: "" }];
+  items =
+    ([{ label: "", items: [{ name: "", value: "" }] }] as ItemGroup[]) ||
+    ([{ name: "", value: "" }] as Item[]);
 
   @property({ type: String })
   requiredError = DefaultErrors.required;
@@ -52,6 +64,18 @@ export class SelectField extends LitElement {
     });
     const id = useId({ total: 8 });
     const identifier = this.id ? this.id : `checkbox-${id()}`;
+
+    const isGrouped = (): boolean => {
+      return !!this.items[0]?.label;
+    };
+
+    const singleItems = (): Item[] => {
+      return this.items as unknown as Item[];
+    };
+
+    const groupitems = (): ItemGroup[] => {
+      return this.items as ItemGroup[];
+    };
 
     return html`
       <div
@@ -75,9 +99,18 @@ export class SelectField extends LitElement {
             value="${this.value}"
             @change="${this.handleChange}"
           >
-            ${this.items.map(
-              (i) => html`<option value="${i.value}">${i.name}</option>`
-            )}
+            ${isGrouped()
+              ? (groupitems() as ItemGroup[]).map(
+                  (g: ItemGroup) => html`<optgroup label="${g.label}">
+                    ${g.items.map(
+                      (i) => html`<option value="${i.value}">${i.name}</option>`
+                    )}
+                  </optgroup>`
+                )
+              : (singleItems() as Item[]).map(
+                  (i: Item) =>
+                    html`<option value="${i.value}">${i.name}</option>`
+                )}
           </select>
         </div>
         <label class="${bemm("label")}">${this.label}</label>

@@ -1,4 +1,12 @@
 import { LitElement } from "lit";
+interface Item {
+    name: String;
+    value: String | Number;
+}
+interface ItemGroup {
+    label: String;
+    items: Item[];
+}
 export declare class SelectField extends LitElement {
     static styles: import("lit").CSSResult;
     protected _touched: boolean;
@@ -8,10 +16,7 @@ export declare class SelectField extends LitElement {
     value: string;
     required: boolean;
     preview: boolean;
-    items: {
-        name: string;
-        value: string;
-    }[];
+    items: ItemGroup[];
     requiredError: string;
     handleChange(e: any): void;
     hasError(): boolean;
@@ -22,3 +27,4 @@ declare global {
         "select-field": SelectField;
     }
 }
+export {};

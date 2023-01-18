@@ -12,7 +12,7 @@
     <!-- <script type="module" src="/src/form/text"></script> -->
     <!-- <script type="module" src="/src/form/number"></script> -->
     <!-- <script type="module" src="/src/form/textarea"></script> -->
-    <!-- <script type="module" src="/src/form/select"></script> -->
+    <script type="module" src="/src/form/select"></script>
     <!-- <script type="module" src="/src/form/form"></script> -->
     <!-- <script type="module" src="/src/form/checkbox"></script> -->
     <script type="module" src="/src/form/switch"></script>
@@ -37,12 +37,13 @@
     </style>
   </head>
   <body>
+    <select></select>
 
     <sil-switch></sil-switch>
     <!-- <sil-menu-toggle></sil-menu-toggle> -->
-<sil-color-mode></sil-color-mode>
+    <sil-color-mode></sil-color-mode>
     <!-- <sil-stack> -->
-    <sil-article-overview>
+    <!-- <sil-article-overview>
       <sil-article-item
         type="icon"
         title="My Title"
@@ -168,7 +169,7 @@
         excerpt="Woopsy, lets Go!"
         image="https://images.unsplash.com/photo-1670198089009-7ebf3747e106?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDYwfHFQWXNEenZKT1ljfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
       ></sil-article-item>
-    </sil-article-overview>
+    </sil-article-overview> -->
     <!-- <sil-button>My Button</sil-button> -->
     <!-- <sil-button type="ghost">My Button</sil-button> -->
     <!-- <sil-button color="primary">My Button</sil-button> -->
@@ -196,31 +197,57 @@
         { name: "Berlin", value: "BER" },
         { name: "Yerevan", value: "EVN" },
       ];
+      const groupedOptions = [
+        {
+          label: "Europe",
+          items: [
+            { name: "Amsterdam", value: "AMS" },
+            { name: "Paris", value: "PAR" },
+            { name: "Berlin", value: "BER" },
+            { name: "Yerevan", value: "EVN" },
+          ],
+        },
+        {
+          label: "South America",
+          items: [
+            { name: "Quito", value: "QTO" },
+            { name: "Willemstad", value: "WIL" },
+            { name: "Valencia", value: "VAL" },
+            { name: "Bogota", value: "BOG" },
+          ],
+        },
+      ];
       const selectField = document.querySelector("sil-select");
       if (selectField) selectField.items = options;
 
       const optionField = document.querySelector("sil-options");
       if (optionField) optionField.items = options;
     </script>
-    <!-- <div
-      v-scope="{ testString: 'something', testNumber: 0, testOption:'hoi',testOptions: [{ name: 'kut', value:' nog kutter'},{ name: 'hoiii', value:'hoi'}] }"
+
+    <div
+      v-scope="{ testString: 'something', testNumber: 0, testOption:'hoi',testOption2: 'kut' }"
     >
-      <form-stack>
-        <text-field label="Text" v-model="testString"></text-field>
-        <number-field label="Number" v-model="testNumber"></number-field>
-        <select-field
+      <sil-stack>
+        <!-- <text-field label="Text" v-model="testString"></text-field>
+        <number-field label="Number" v-model="testNumber"></number-field> -->
+        <sil-select
           label="Select"
           v-model="testOption"
-          :items="testOptions"
-        ></select-field>
-        <textarea-field label="Text Area" v-model="testString"></textarea-field>
-      </form-stack>
+          :items="options"
+        ></sil-select>
+        <sil-select
+          label="Select2"
+          v-model="testOption2"
+          :items="groupedOptions"
+        ></sil-select>
+        <!-- <textarea-field label="Text Area" v-model="testString"></textarea-field> -->
+      </sil-stack>
 
       results:<br />
       {{testString}}<br />
       {{testNumber}}<br />
       {{testOption}}<br />
-      {{testOptions}}<br />
-    </div> -->
+      {{testOption2}}<br />
+    </div>
   </body>
 </html>

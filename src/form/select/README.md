@@ -28,7 +28,6 @@ select.items = [{
 }];
 </script>
 
-
 ```html
 <sil-select id="my-select" .items="items" label="My Input"></sil-select>
 ```
@@ -56,7 +55,6 @@ select.items = [
 ];
 ```
 
-
 ## Usage
 
 Install
@@ -69,6 +67,66 @@ Use
 
 ```html
 <sil-select></sil-select>
+```
+
+### Data examples
+
+__Single level list:__
+
+format: 
+```
+[{
+  name: string,
+  value: string
+}]
+```
+example:
+```js
+const options = [
+  { name: "Amsterdam", value: "AMS" },
+  { name: "Paris", value: "PAR" },
+  { name: "Berlin", value: "BER" },
+  { name: "Yerevan", value: "EVN" },
+];
+```
+
+__List with groups:__
+
+format:
+```
+[{
+  label: string
+  items: [
+    {
+      name: string,
+      value: string
+    }
+  ]
+}]
+```
+
+example: 
+```js
+const groupedOptions = [
+  {
+    label: "Europe",
+    items: [
+      { name: "Amsterdam", value: "AMS" },
+      { name: "Paris", value: "PAR" },
+      { name: "Berlin", value: "BER" },
+      { name: "Yerevan", value: "EVN" },
+    ],
+  },
+  {
+    label: "South America",
+    items: [
+      { name: "Quito", value: "QTO" },
+      { name: "Willemstad", value: "WIL" },
+      { name: "Valencia", value: "VAL" },
+      { name: "Bogota", value: "BOG" },
+    ],
+  },
+];
 ```
 
 ## Props
