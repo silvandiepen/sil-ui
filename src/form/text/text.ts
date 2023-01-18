@@ -41,7 +41,7 @@ export class Text extends LitElement {
     this.value = e.target.value;
     this._touched = true;
   }
-
+  
   hasError() {
     return this.required && this._touched && this.value == "";
   }
