@@ -24,6 +24,9 @@ export class ArticleItem extends LitElement {
   @property({ type: String })
   link = "";
 
+  @property({ type: Function })
+  clickAction = () => {};
+
   @property({ type: String })
   excerpt = "";
 
@@ -86,6 +89,11 @@ export class ArticleItem extends LitElement {
 
     const handleClick = () => {
       if (this.link) window.location.href = this.link;
+
+      if (this.clickAction) {
+        console.log("doing action", this.clickAction);
+        this.clickAction();
+      }
     };
 
     const has = (prop: string) => {

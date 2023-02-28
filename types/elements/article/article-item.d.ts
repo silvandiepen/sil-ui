@@ -4,6 +4,7 @@ export declare class ArticleItem extends LitElement {
     image: string;
     title: string;
     link: string;
+    clickAction: () => void;
     excerpt: string;
     author: string;
     date: string;
