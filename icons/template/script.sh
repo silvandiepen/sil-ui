@@ -6,4 +6,4 @@ node node_modules/icon-components/dist/cli.js \
     --in-root false  \
     --removeTags svg style  \
     --removeAttrs fill style \
-    --listTemplate icons/template/list.ts.template
+    --listTemplate icons/template/list.ts.template icons/template/icons.json.template

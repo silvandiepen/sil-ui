@@ -5,5 +5,8 @@
     "style": "/assets/custom.css",
     "description": "A simple set of components to be used anywhere",
     "logo": "/assets/logo.svg"
+  },
+  "style": {
+    "custom": "/assets/custom.css"
   }
 }

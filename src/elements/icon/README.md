@@ -1,4 +1,5 @@
 ---
+list: /src/icons/icons.json
 icon: i
 ---
 
@@ -9,6 +10,15 @@ A styled card
 ## Example
 
 <!-- <sil-icon icon="arrow-up"></sil-icon> -->
+
+<!-- list -->
+.icon-container
+    each icon in list.icons
+        .icon
+            span.icon__icon
+                | <sil-#{icon}></sil-#{icon}>
+            span.icon__text=icon
+<!-- /list -->
 
 ---
 
@@ -37,3 +47,4 @@ Use
 | prop | default | description                  |
 | ---- | ------- | ---------------------------- |
 | icon | `?`     | The icon you want to display |
+

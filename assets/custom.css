@@ -4,3 +4,32 @@
 .archive--blog {
   --article-item-min-width: 100%;
 }
+
+.icon-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.icon {
+  padding: var(--space-s);
+  text-align: center;
+  width: 25%;
+  position: relative;
+  border-radius: var(--border-radius);
+}
+.icon:hover{
+background-color: var(--primary);
+color: var(--primary-text);
+}
+.icon__icon {
+  width: 100%;
+  aspect-ratio: 1/1;
+  font-size: 3em;
+}
+.icon__text {
+  font-size: 0.65em;
+  margin: 0;
+  display: block;
+  left:0;top: 100%; transform: translateY(-200%);
+  position: absolute;
+  width: 100%; text-align: center;
+}
