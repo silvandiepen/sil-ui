@@ -5,21 +5,24 @@ import { getComponentName } from "../../base";
 import styles from "../../elements/icon/icon.scss?inline";
 const styleData = styles;
 
-@customElement(getComponentName("icon-laptop"))
-export class IconLaptop extends LitElement {
+@customElement(getComponentName("icon-terminal"))
+export class IconTerminal extends LitElement {
   static styles = unsafeCSS(styleData);
 
   render() {
     return html`
-     <svg class="sil-icon" version="1.1" id="IconLaptop" x="0px" y="0px"
+     <svg class="sil-icon" version="1.1" id="IconTerminal" x="0px" y="0px"
 	 viewBox="0 0 216 216" style="enable-background:new 0 0 216 216;" xml:space="preserve">
 		
 
 	.st0{fill:#FFFFFF;stroke:#000000;stroke-width:8;stroke-miterlimit:10;}
 	.st1{fill:none;stroke:#000000;stroke-width:8;stroke-miterlimit:10;}
 
-<path d="M175,138V71c0-6.6-5.4-12-12-12H62c-6.6,0-12,5.4-12,12v67H39v16c0,7.7,6.3,14,14,14h119c7.7,0,14-6.3,14-14v-16H175z
-	 M58,71c0-2.2,1.8-4,4-4h101c2.2,0,4,1.8,4,4v67H58V71z M174,154c0,1.1-0.9,2-2,2H53c-1.1,0-2-0.9-2-2v-4h123V154z"/>
+<g>
+	<path d="M41,50v116h134V50H41z M167,158H49V58h118V158z"/>
+	<polygon points="65.8,110.8 86.7,90 65.8,69.2 60.2,74.8 75.3,90 60.2,105.2 	"/>
+	<rect x="90" y="104" width="27" height="8"/>
+</g>
 
 	</svg>
     `;
@@ -28,6 +31,6 @@ export class IconLaptop extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "sil-icon-laptop": IconLaptop;
+    "sil-icon-terminal": IconTerminal;
   }
 }

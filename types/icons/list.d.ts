@@ -1,6 +1,7 @@
 export declare const iconList: string[];
 export declare const iconListType: readonly string[];
 export declare enum Icons {
+    ICON_APPS = "icon-apps",
     ICON_ARROW_DOWN = "icon-arrow-down",
     ICON_ARROW_LEFT = "icon-arrow-left",
     ICON_ARROW_RIGHT = "icon-arrow-right",
@@ -9,6 +10,8 @@ export declare enum Icons {
     ICON_BIGGER = "icon-bigger",
     ICON_BOOK = "icon-book",
     ICON_BOX = "icon-box",
+    ICON_BURGER = "icon-burger",
+    ICON_CAMERA = "icon-camera",
     ICON_CHECK = "icon-check",
     ICON_CHEVRON_DOWN = "icon-chevron-down",
     ICON_CHEVRON_LEFT = "icon-chevron-left",
@@ -20,6 +23,7 @@ export declare enum Icons {
     ICON_COPY = "icon-copy",
     ICON_CROSS = "icon-cross",
     ICON_DESKTOP = "icon-desktop",
+    ICON_DISPLAY = "icon-display",
     ICON_DOCUMENT = "icon-document",
     ICON_DOCUMENTS = "icon-documents",
     ICON_DRIBBBLE = "icon-dribbble",
@@ -52,6 +56,8 @@ export declare enum Icons {
     ICON_MOBILE = "icon-mobile",
     ICON_MOON = "icon-moon",
     ICON_MORE = "icon-more",
+    ICON_PERSON = "icon-person",
+    ICON_PHONE = "icon-phone",
     ICON_PRINTER = "icon-printer",
     ICON_PROFILE = "icon-profile",
     ICON_REPORTS = "icon-reports",
@@ -59,15 +65,19 @@ export declare enum Icons {
     ICON_SEND = "icon-send",
     ICON_SETTINGS = "icon-settings",
     ICON_SHARE = "icon-share",
+    ICON_SIL = "icon-sil",
     ICON_SLACK = "icon-slack",
     ICON_SMALLER = "icon-smaller",
     ICON_SUN = "icon-sun",
+    ICON_TABLET = "icon-tablet",
     ICON_TEAM = "icon-team",
     ICON_TELEGRAM = "icon-telegram",
+    ICON_TERMINAL = "icon-terminal",
     ICON_TIME = "icon-time",
     ICON_TWITTER = "icon-twitter",
     ICON_VISIBLE = "icon-visible",
     ICON_VSF = "icon-vsf",
     ICON_WARNING = "icon-warning",
-    ICON_WARNING2 = "icon-warning2"
+    ICON_WARNING2 = "icon-warning2",
+    ICON_WORLD = "icon-world"
 }
